@@ -12,15 +12,32 @@
   --text: rgba(255, 255, 255, 0.9);
   --muted: rgba(255, 255, 255, 0.7);
 
+  /* Cores primárias TRON */
   --cyan: #00E5FF;
   --magenta: #FF2DAA;
   --violet: #7C4DFF;
+
+  /* Tons mais suaves (desaturados) */
+  --cyan-dark: #0099CC;
+  --magenta-dark: #CC1F7C;
+  --violet-light: #9C7FFF;
+
+  /* Acento quente - Ouro */
+  --accent-gold: #FFD700;
+
+  /* Para borders e estados fracos */
+  --cyan-muted: rgba(0, 229, 255, 0.25);
+  --magenta-muted: rgba(255, 45, 170, 0.25);
+  --violet-muted: rgba(124, 77, 255, 0.25);
+  --gold-muted: rgba(255, 215, 0, 0.25);
 
   --border: rgba(0, 229, 255, 0.28);
   --border-strong: rgba(0, 229, 255, 0.55);
 
   --shadow-cyan: 0 0 18px rgba(0, 229, 255, 0.25);
   --shadow-magenta: 0 0 18px rgba(255, 45, 170, 0.18);
+  --shadow-violet: 0 0 18px rgba(124, 77, 255, 0.18);
+  --shadow-gold: 0 0 18px rgba(255, 215, 0, 0.20);
 
   --radius: 18px;
   --radius-sm: 12px;
@@ -131,10 +148,10 @@ button:focus-visible {
   max-width: var(--container);
   margin: 28px auto 18px;
   padding: 22px clamp(18px, 2.2vw, 28px);
-  border: 1px solid rgba(0, 229, 255, 0.42);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 0 26px rgba(0, 229, 255, 0.20);
+  box-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
 }
 
 .portal__title {
@@ -173,9 +190,9 @@ button:focus-visible {
   gap: 8px;
   padding: 10px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 45, 170, 0.45);
-  background: rgba(255, 45, 170, 0.08);
-  box-shadow: 0 0 14px rgba(255, 45, 170, 0.18);
+  border: 1px solid rgba(124, 77, 255, 0.35);
+  background: rgba(124, 77, 255, 0.07);
+  box-shadow: 0 0 14px rgba(124, 77, 255, 0.12);
   color: var(--text);
   text-decoration: none;
   transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
@@ -183,16 +200,16 @@ button:focus-visible {
 
 .portal__nav-link:hover {
   transform: translateY(-1px);
-  border-color: rgba(255, 45, 170, 0.75);
-  background: rgba(255, 45, 170, 0.12);
-  box-shadow: 0 0 18px rgba(255, 45, 170, 0.26);
+  border-color: rgba(255, 215, 0, 0.65);
+  background: rgba(255, 45, 170, 0.10);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.24);
   text-decoration: none;
 }
 
 .portal__nav-link:focus-visible {
-  outline: 2px solid rgba(255, 45, 170, 0.85);
+  outline: 2px solid rgba(255, 215, 0, 0.75);
   outline-offset: 3px;
-  box-shadow: 0 0 20px rgba(255, 45, 170, 0.30);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.28);
 }
 
 
@@ -225,10 +242,10 @@ button:focus-visible {
 
 /* ---------- Aside (Guide) ---------- */
 .portal__aside {
-  border: 1px solid rgba(0, 229, 255, 0.42);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 0 26px rgba(0, 229, 255, 0.20);
+  box-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
   padding: 18px;
 }
 
@@ -287,10 +304,10 @@ button:focus-visible {
 
 /* ---------- Main ---------- */
 .portal__main {
-  border: 1px solid rgba(0, 229, 255, 0.42);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 0 26px rgba(0, 229, 255, 0.20);
+  box-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
   padding: 20px;
 }
 
@@ -323,13 +340,13 @@ button:focus-visible {
   padding-left: 10px;
 }
 
-/* detalhe TRON: bullet glow */
+/* detalhe TRON: bullet glow - Ouro quente */
 .portal__features-list li::before {
   content: "▸";
-  color: var(--cyan);
+  color: #FFD700;
   position: absolute;
   left: -12px;
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.35);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.35);
 }
 
 
@@ -366,13 +383,13 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
-  border: 1px solid rgba(255, 45, 170, 0.30);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   background: linear-gradient(
     180deg,
-    rgba(255, 45, 170, 0.06),
-    rgba(255, 255, 255, 0.02)
+    rgba(0, 229, 255, 0.03),
+    rgba(0, 229, 255, 0.01)
   );
-  box-shadow: 0 0 18px rgba(255, 45, 170, 0.18);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.12);
   padding: 16px;
   position: relative;
   overflow: hidden;
@@ -385,23 +402,23 @@ button:focus-visible {
   content: "";
   position: absolute;
   inset: -2px;
-  background: linear-gradient(120deg,
-    transparent 0%,
-    rgba(255, 45, 170, 0.14) 28%,
-    transparent 60%,
-    rgba(255, 45, 170, 0.08) 78%,
-    transparent 100%);
+  background: radial-gradient(circle at 30% 20%, 
+    rgba(0, 229, 255, 0.12), 
+    transparent 65%);
   opacity: 0.65;
-  filter: blur(14px);
+  filter: blur(104px);
   pointer-events: none;
 }
 
 .module__card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 45, 170, 0.60);
+  border-color: rgba(255, 45, 170, 0.55);
+  background: radial-gradient(circle at 30% 20%, 
+    rgba(255, 45, 170, 0.12), 
+    transparent 70%);
   box-shadow:
-    0 0 26px rgba(255, 45, 170, 0.24),
-    0 0 14px rgba(0, 229, 255, 0.10);
+    0 0 26px rgba(255, 45, 170, 0.20),
+    0 0 14px rgba(255, 45, 170, 0.12);
 }
 
 .module__header {
@@ -449,8 +466,8 @@ button:focus-visible {
   gap: 10px;
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 45, 170, 0.45);
-  background: rgba(255, 45, 170, 0.08);
+  border: 1px solid rgba(124, 77, 255, 0.35);
+  background: rgba(124, 77, 255, 0.07);
   color: var(--text);
   font-weight: 600;
   text-decoration: none;
@@ -459,9 +476,9 @@ button:focus-visible {
 
 .module__link:hover {
   transform: translateY(-1px);
-  border-color: rgba(255, 45, 170, 0.75);
+  border-color: rgba(255, 215, 0, 0.65);
   background: rgba(255, 45, 170, 0.12);
-  box-shadow: 0 0 14px rgba(255, 45, 170, 0.22);
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.28);
   text-decoration: none;
 }
 
