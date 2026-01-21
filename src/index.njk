@@ -31,14 +31,19 @@ asideType: home
     {% include "partials/alert.njk" %}
   </div>
 
-  <!-- Barra de progresso -->
-  <div class="portal__progress-overview">
-    <h3 class="portal__progress-title">Seu Progresso</h3>
-    <div class="portal__progress-bar">
-      <div class="portal__progress-fill" id="progress-bar-fill" style="width: 0%"></div>
-    </div>
-    <p class="portal__progress-text"><span id="progress-text">0</span> de 8 módulos completados</p>
+<!-- Barra de progresso -->
+<div class="portal__progress-overview">
+  <h3 class="portal__progress-title">Seu Progresso</h3>
+  <div class="portal__progress-bar">
+    <div class="portal__progress-fill" id="progress-bar-fill" style="width: 0%"></div>
   </div>
+  <p class="portal__progress-text"><span id="progress-text">0</span> de 8 módulos completados</p>
+  
+  <!-- Botão de Reset -->
+  <button class="portal__progress-reset-btn" onclick="resetProgressConfirm();" title="Limpar progresso e reiniciar o curso">
+    <i class="fa-solid fa-arrow-rotate-left"></i> Reiniciar Curso
+  </button>
+</div>
 
 </section>
 
@@ -212,6 +217,39 @@ asideType: home
         card.classList.remove('module__card--completed');
       }
     });
+  }
+
+  // Função para resetar progresso com confirmação
+  function resetProgressConfirm() {
+    const confirmed = confirm(
+      '⚠️ Tem certeza que deseja reiniciar o curso?\n\nTodo o seu progresso será apagado e não poderá ser recuperado.'
+    );
+    
+    if (confirmed) {
+      window.progressTracker.resetProgress();
+      updateProgressDisplay();
+      
+      // Feedback visual
+      showResetNotification();
+    }
+  }
+
+  // Notificação visual de sucesso
+  function showResetNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'progress-reset-notification';
+    notification.textContent = '✓ Curso reiniciado com sucesso!';
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
   }
 
   // Inicializar na carga da página
