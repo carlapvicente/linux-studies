@@ -179,6 +179,24 @@ button:focus-visible {
   gap: 10px;
 }
 
+/* ---------- Aside: Samples Button ---------- */
+.aside__samples-button {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.aside__samples-button .btn {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(124, 77, 255, 0.10));
+  border-color: rgba(0, 229, 255, 0.45);
+}
+
+.aside__samples-button .btn:hover {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(124, 77, 255, 0.20));
+  border-color: rgba(255, 215, 0, 0.65);
+}
+
 /* ---------- Aside: Top Button ---------- */
 .aside__top-button {
   margin-bottom: 16px;
@@ -658,6 +676,38 @@ button:focus-visible {
   font-size: 18px;
   line-height: 1;
   flex-shrink: 0;
+  /* Font Awesome styling */
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cores dos ícones por tipo de alerta */
+.alert--note .alert__icon {
+  color: rgba(124, 77, 255, 0.9);
+  text-shadow: 0 0 8px rgba(124, 77, 255, 0.3);
+}
+
+.alert--tip .alert__icon {
+  color: rgba(0, 229, 255, 0.9);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.alert--important .alert__icon {
+  color: rgba(255, 45, 170, 0.9);
+  text-shadow: 0 0 8px rgba(255, 45, 170, 0.3);
+}
+
+.alert--caution .alert__icon {
+  color: rgba(255, 65, 108, 0.95);
+  text-shadow: 0 0 8px rgba(255, 65, 108, 0.3);
+}
+
+.alert--warning .alert__icon {
+  color: rgba(255, 215, 0, 0.95);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
 }
 
 .alert__title {
