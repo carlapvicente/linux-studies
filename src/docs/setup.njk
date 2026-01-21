@@ -1,15 +1,15 @@
 ---
 layout: layouts/base.njk
-pageTitle: Linux Studies — Roadmap do Curso
-title: Roadmap do Curso
-subtitle: Veja a progressão completa da trilha e entenda como estudar de forma eficaz.
+pageTitle: Linux Studies — Pré-requisitos
+title: 🛠️ Pré-requisitos
+subtitle: Configure seu ambiente para começar a estudar Linux.
 headerType: doc
 asideType: doc
 permalink: /docs/setup/
 ---
 
 <section class="portal__section">
-  <h1 class="portal__section-title">🛠️ Setup do Ambiente Linux</h1>
+  <h1 class="portal__section-title">🛠️ Pré-requisitos</h1>
 
   <p class="portal__introduction-text">
     Para estudar Linux, você precisa acessar um terminal Linux.
@@ -25,63 +25,55 @@ permalink: /docs/setup/
     <li>Digite o comando abaixo e pressione <strong>Enter</strong>:</li>
   </ol>
 
-  <pre class="terminal__block"><code>wsl --install</code></pre>
+    {% set language = 'bash' %}
+    {% set code = 'wsl --install' %}
+    {% include "partials/code-block.njk" %}
 
   <ol start="3" class="course__guide-steps">
     <li>Reinicie o computador.</li>
     <li>Abra o Ubuntu instalado.</li>
   </ol>
 
-<div class="alert alert--tip" role="note" aria-label="Dica">
-  <div class="alert__head">
-    <span class="alert__icon" aria-hidden="true">💡</span>
-    <h3 class="alert__title">Dica</h3>
-  </div>
-  <p class="alert__text">
-
-    📘 Conteúdo do Microsoft Learn:
-    <a href="https://learn.microsoft.com/pt-br/windows/wsl/install" target="_blank">
-      Como instalar o Linux no Windows com o WSL
-    </a>
-
-  </p>
-</div>
+    {% set type = 'tip' %}
+    {% set title = 'Dica' %}
+    {% set text = 'Conteúdo do Microsoft Learn:
+      <ul class="portal__features-list">
+        <li>
+          <a href="https://learn.microsoft.com/pt-br/windows/wsl/install" target="_blank">
+            Como instalar o Linux no Windows com o WSL
+          </a>
+        </li>
+      </ul>' %}
+    {% include "partials/alert.njk" %}
 
   <hr class="portal__divider">
 
   <h2>🖥️ Opção 2 — Máquina Virtual</h2>
 
-  <p>Recomendado:</p>
-  <ul class="course__guide-steps">
-    <li>Ubuntu</li>
-    <li>Debian</li>
-  </ul>
+  <p>Para o curso utilizamos a distro Ubuntu virtualizada no VirtualBox.</p>
 
-  <p>Você pode utilizar:</p>
-  <ul class="course__guide-steps">
-    <li>VirtualBox</li>
-    <li>VMware</li>
-  </ul>
+  <ol class="course__guide-steps">
+    <li>Baixe e instale o <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a>.</li>
+    <li>Baixe a ISO do <a href="https://ubuntu.com/download/desktop" target="_blank">Ubuntu Desktop</a>.</li>
+    <li>Crie uma nova máquina virtual no VirtualBox e instale o Ubuntu usando a ISO baixada.</li>
+  </ol>
 
-<div class="alert alert--tip" role="note" aria-label="Dica">
-  <div class="alert__head">
-    <span class="alert__icon" aria-hidden="true">💡</span>
-    <h3 class="alert__title">Dica</h3>
-  </div>
-  <p class="alert__text">
-    
-    📘 Conteúdo de Vinicius Paes:
-    <br>
-    <a href="https://viniciuspaes.com/software/tutorial-instalar-virtual-box-criacao-maquinas-virtuais/" target="_blank">
-      Tutorial como instalar o VirtualBox
-    </a>
-    <br>
-    <a href="https://viniciuspaes.com/linux/tutorial-setup-servidor-linux-ubuntu-local-virtualbox/" target="_blank">
-      Tutorial Setup Servidor Linux Ubuntu Local com VirtualBox
-    </a>
-
-  </p>
-</div>
+    {% set type = 'tip' %}
+    {% set title = 'Dica' %}
+    {% set text = 'Conteúdo de Vinicius Paes:
+      <ul class="portal__features-list">
+        <li>
+          <a href="https://viniciuspaes.com/software/tutorial-instalar-virtual-box-criacao-maquinas-virtuais/" target="_blank">
+            Tutorial como instalar o VirtualBox
+          </a>
+        </li>
+        <li>
+          <a href="https://viniciuspaes.com/linux/tutorial-setup-servidor-linux-ubuntu-local-virtualbox/" target="_blank">
+            Tutorial Setup Servidor Linux Ubuntu Local com VirtualBox
+          </a>
+        </li>
+      </ul>' %}
+    {% include "partials/alert.njk" %}
 
   <hr class="portal__divider">
 
@@ -94,36 +86,4 @@ permalink: /docs/setup/
 
   <a href="/docs/intro/" class="portal__next-link">Próxima Seção: Introdução ao Linux</a>
 
-  <hr class="portal__divider">
-
 </section>
-
-## Alert Note (Observação - Cyan)
-{% set type = 'note' %}
-{% set title = 'Observação' %}
-{% set text = 'Informação que o aluno deve notar mesmo passando o olho.' %}
-{% include "partials/alert.njk" %}
-
-## Alert Tip (Dica - Violet)
-{% set type = 'tip' %}
-{% set title = 'Dica' %}
-{% set text = 'Informação opcional para ajudar o aluno a ter mais sucesso.' %}
-{% include "partials/alert.njk" %}
-
-## Alert Important (Importante - Magenta)
-{% set type = 'important' %}
-{% set title = 'Importante' %}
-{% set text = 'Informação essencial para o aluno seguir sem travar.' %}
-{% include "partials/alert.njk" %}
-
-## Alert Caution (Cuidado - Vermelho)
-{% set type = 'caution' %}
-{% set title = 'Cuidado' %}
-{% set text = 'Possíveis consequências negativas de uma ação.' %}
-{% include "partials/alert.njk" %}
-
-## Alert Warning (Aviso - Ouro)
-{% set type = 'warning' %}
-{% set title = 'Aviso' %}
-{% set text = 'Consequências potencialmente perigosas de uma ação.' %}
-{% include "partials/alert.njk" %}
