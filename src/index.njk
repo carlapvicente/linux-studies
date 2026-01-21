@@ -17,13 +17,36 @@ asideType: home
     <li><strong>Desafios</strong> para testar seus conhecimentos</li>
     <li><strong>Checklist</strong> para rastrear seu progresso</li>
   </ul>
+
+  {# NOVO: Informação sobre a trilha #}
+  <div class="portal__roadmap-info">
+    <p class="portal__roadmap-text">
+      A trilha é progressiva e cada nível prepara você para o próximo. 
+      <strong>Recomendamos que siga a sequência</strong> para consolidar bem os conceitos.
+    </p>
+    
+    {% set type = 'tip' %}
+    {% set title = 'Dica' %}
+    {% set text = 'Você pode rastrear seu progresso conforme avança pelos módulos. Os módulos completados aparecerão com uma marcação especial!' %}
+    {% include "partials/alert.njk" %}
+  </div>
+
+  <!-- Barra de progresso -->
+  <div class="portal__progress-overview">
+    <h3 class="portal__progress-title">Seu Progresso</h3>
+    <div class="portal__progress-bar">
+      <div class="portal__progress-fill" id="progress-bar-fill" style="width: 0%"></div>
+    </div>
+    <p class="portal__progress-text"><span id="progress-text">0</span> de 8 módulos completados</p>
+  </div>
+
 </section>
 
 <section class="portal__track">
   <ol class="portal__modules-list" aria-label="Lista de módulos da trilha Linux">
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="00-onboarding">
         <div class="module__header">
           <p class="module__level">Level 00</p>
           <h3 class="module__title">Onboarding</h3>
@@ -33,11 +56,14 @@ asideType: home
           estrutura dos conteúdos e o que esperar nos próximos níveis.
         </p>
         <a href="{{ '/modules/00-onboarding/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('00-onboarding'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="01-terminal-basics">
         <div class="module__header">
           <p class="module__level">Level 01</p>
           <h3 class="module__title">Terminal Basics</h3>
@@ -47,11 +73,14 @@ asideType: home
           e manipulação de arquivos através da linha de comando.
         </p>
         <a href="{{ '/modules/01-terminal-basics/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('01-terminal-basics'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="02-filesystem">
         <div class="module__header">
           <p class="module__level">Level 02</p>
           <h3 class="module__title">Filesystem</h3>
@@ -61,11 +90,14 @@ asideType: home
           hard links e symbolic links.
         </p>
         <a href="{{ '/modules/02-filesystem/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('02-filesystem'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="03-permissions">
         <div class="module__header">
           <p class="module__level">Level 03</p>
           <h3 class="module__title">Permissions</h3>
@@ -75,11 +107,14 @@ asideType: home
           Segurança começa aqui!
         </p>
         <a href="{{ '/modules/03-permissions/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('03-permissions'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="04-processes">
         <div class="module__header">
           <p class="module__level">Level 04</p>
           <h3 class="module__title">Processes</h3>
@@ -89,11 +124,14 @@ asideType: home
           monitorar a execução de aplicações.
         </p>
         <a href="{{ '/modules/04-processes/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('04-processes'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="05-networking">
         <div class="module__header">
           <p class="module__level">Level 05</p>
           <h3 class="module__title">Networking</h3>
@@ -103,11 +141,14 @@ asideType: home
           ferramentas de diagnóstico de rede.
         </p>
         <a href="{{ '/modules/05-networking/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('05-networking'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
     <li>
-      <article class="module__card">
+      <article class="module__card" data-module-id="06-systemd-logs">
         <div class="module__header">
           <p class="module__level">Level 06</p>
           <h3 class="module__title">Systemd & Logs</h3>
@@ -117,8 +158,67 @@ asideType: home
           administração e troubleshooting de sistemas.
         </p>
         <a href="{{ '/modules/06-systemd-logs/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('06-systemd-logs'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
+      </article>
+    </li>
+
+    <li>
+      <article class="module__card" data-module-id="07-admin-essentials">
+        <div class="module__header">
+          <p class="module__level">Level 07</p>
+          <h3 class="module__title">Linux Admin Essentials</h3>
+        </div>
+        <p class="module__description">
+          Consolidar o aprendizado com rotinas comuns de administração e automação.
+        </p>
+        <a href="{{ '/modules/07-admin-essentials/' | url }}" class="module__link">Acessar Módulo</a>
+        <button class="module__complete-btn" onclick="window.progressTracker.markComplete('07-admin-essentials'); updateProgressDisplay();">
+          <i class="fa-solid fa-check"></i> Marcar como Completo
+        </button>
       </article>
     </li>
 
   </ol>
 </section>
+
+<!-- Script para gerenciar progresso na página -->
+<script>
+  // Função para atualizar a exibição do progresso
+  function updateProgressDisplay() {
+    const tracker = window.progressTracker;
+    const progress = tracker.getOverallProgress();
+    const completed = Object.keys(tracker.getProgress()).length;
+    
+    // Atualizar barra
+    const progressBar = document.getElementById('progress-bar-fill');
+    if (progressBar) {
+      progressBar.style.width = progress + '%';
+    }
+    
+    // Atualizar texto
+    const progressText = document.getElementById('progress-text');
+    if (progressText) {
+      progressText.textContent = completed;
+    }
+    
+    // Atualizar cards completados
+    document.querySelectorAll('[data-module-id]').forEach(card => {
+      const moduleId = card.dataset.moduleId;
+      if (tracker.isComplete(moduleId)) {
+        card.classList.add('module__card--completed');
+      } else {
+        card.classList.remove('module__card--completed');
+      }
+    });
+  }
+
+  // Inicializar na carga da página
+  document.addEventListener('DOMContentLoaded', function() {
+    updateProgressDisplay();
+  });
+
+  // Atualizar quando progresso muda
+  window.addEventListener('progressUpdated', updateProgressDisplay);
+</script>

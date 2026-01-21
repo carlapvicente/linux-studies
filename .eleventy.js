@@ -2,6 +2,7 @@
 module.exports = function (eleventyConfig) {
   // Copia assets estáticos para o _site
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
 
   // Base path: local = "/", GitHub Pages project = "/linux-studies/"
   const baseUrl = process.env.ELEVENTY_BASE_URL || "/";
