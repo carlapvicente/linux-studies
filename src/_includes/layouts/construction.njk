@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    {% include "partials/head.njk" %}
+  </head>
+
+  <body>
+    {% include "partials/header-home.njk" %}
+
+    <div class="portal__layout">
+      {% include "partials/aside-home.njk" %}
+
+      <main id="main-content" class="portal__main">
+        <section class="construction">
+          <div class="construction__container">
+            <div class="construction__icon">
+              <i class="fa-solid fa-hammer"></i>
+            </div>
+            
+            <h1 class="construction__title">{{ pageTitle or 'Página em Construção' }}</h1>
+            
+            <p class="construction__message">
+              {{ constructionMessage or 'Esta seção está sendo desenvolvida. Volte em breve!' }}
+            </p>
+
+            {% if constructionEstimate %}
+            <p class="construction__estimate">
+              <i class="fa-solid fa-calendar-days"></i>
+              Previsão: <strong>{{ constructionEstimate }}</strong>
+            </p>
+            {% endif %}
+
+            <div class="construction__actions">
+              <a href="{{ '/' | url }}" class="btn btn--nav">
+                <i class="fa-solid fa-house"></i>
+                Voltar ao Início
+              </a>
+              <a href="{{ '/docs/roadmap/' | url }}" class="btn btn--nav">
+                <i class="fa-solid fa-map"></i>
+                Ver Roadmap
+              </a>
+            </div>
+
+            <div class="construction__progress">
+              <p class="construction__progress-label">Progresso da Trilha</p>
+              <div class="construction__progress-bar">
+                <div class="construction__progress-fill" style="width: {{ constructionProgress or '45' }}%"></div>
+              </div>
+              <p class="construction__progress-percent">{{ constructionProgress or '45' }}%</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    {% include "partials/footer.njk" %}
+  </body>
+</html>
