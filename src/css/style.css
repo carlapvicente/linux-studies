@@ -1051,13 +1051,13 @@ button:focus-visible {
 }
 
 .alert--tip .alert__icon {
-  color: rgba(0, 229, 255, 0.9);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: rgba(27, 231, 88, 0.9);
+  text-shadow: 0 0 8px rgba(27, 231, 88, 0.3);
 }
 
-.alert--important .alert__icon {
-  color: rgba(255, 45, 170, 0.9);
-  text-shadow: 0 0 8px rgba(255, 45, 170, 0.3);
+.alert--information .alert__icon {
+  color: rgba(0, 229, 255, 0.9);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
 }
 
 .alert--caution .alert__icon {
@@ -1116,6 +1116,23 @@ button:focus-visible {
 
 /* Alert: Tip - Cyan */
 .alert--tip {
+  --accent: rgb(27, 231, 88);
+  border-left-color: rgba(27, 231, 88, 0.55);
+  background: linear-gradient(
+    90deg,
+    rgba(27, 231, 88, 0.04),
+    rgba(27, 231, 88, 0.01)
+  );
+  box-shadow: 0 0 12px rgba(27, 231, 88, 0.10);
+}
+
+.alert--tip .alert__title {
+  color: rgba(27, 231, 88, 0.95);
+  text-shadow: 0 0 8px rgba(27, 231, 88, 0.25);
+}
+
+/* Alert: Information - Magenta */
+.alert--information {
   --accent: rgb(0, 229, 255);
   border-left-color: rgba(0, 229, 255, 0.55);
   background: linear-gradient(
@@ -1126,26 +1143,9 @@ button:focus-visible {
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.10);
 }
 
-.alert--tip .alert__title {
+.alert--information .alert__title {
   color: rgba(0, 229, 255, 0.95);
   text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
-}
-
-/* Alert: Important - Magenta */
-.alert--important {
-  --accent: rgb(255, 45, 170);
-  border-left-color: rgba(255, 45, 170, 0.55);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 45, 170, 0.04),
-    rgba(255, 45, 170, 0.01)
-  );
-  box-shadow: 0 0 12px rgba(255, 45, 170, 0.10);
-}
-
-.alert--important .alert__title {
-  color: rgba(255, 45, 170, 0.95);
-  text-shadow: 0 0 8px rgba(255, 45, 170, 0.25);
 }
 
 /* Alert: Caution - Ouro */
