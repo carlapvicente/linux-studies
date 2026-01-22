@@ -6,8 +6,6 @@
   </head>
 
   <body>
-    {# {% include "partials/header-home.njk" %} #}
-
     {% if headerType == "doc" %}
       {% include "partials/header-doc.njk" %}
     {% else %}
@@ -15,8 +13,6 @@
     {% endif %}
 
     <div class="portal__layout">
-      {# {% include "partials/aside-home.njk" %} #}
-
       {% if asideType == "doc" %}
         {% include "partials/aside-doc.njk" %}
       {% else %}
@@ -42,17 +38,6 @@
               Previsão: <strong>{{ constructionEstimate }}</strong>
             </p>
             {% endif %}
-
-            <div class="construction__actions">
-              <a href="{{ '/' | url }}" class="btn btn--nav">
-                <i class="fa-solid fa-house"></i>
-                Voltar ao Início
-              </a>
-              <a href="{{ '/docs/roadmap/' | url }}" class="btn btn--nav">
-                <i class="fa-solid fa-map"></i>
-                Ver Roadmap
-              </a>
-            </div>
 
             <div class="construction__progress">
               <p class="construction__progress-label">Progresso da Trilha</p>
