@@ -6,30 +6,46 @@ asideType: home
 ---
 
 <section class="portal__introduction">
-  <h2 class="portal__section-title">Trilha de Estudos</h2>
-  <p class="portal__introduction-text">
-    Cada módulo é estruturado para oferecer uma experiência de aprendizado completa. Você encontrará:
-  </p>
 
-  <ul class="portal__features-list">
-    <li><strong>Explicações</strong> dos conceitos fundamentais</li>
-    <li><strong>Exercícios práticos</strong> para consolidar o aprendizado</li>
-    <li><strong>Desafios</strong> para testar seus conhecimentos</li>
-    <li><strong>Checklist</strong> para rastrear seu progresso</li>
-  </ul>
+<section class="module__content">
+  <header class="module__header-content">
+    <h1 class="module__main-title"><i class="fa-solid fa-rocket"></i> Bem-vindo ao Linux Studies!</h1>
+    <p class="module__subtitle">Esta trilha faz parte do DevOps Arcade e foi criada para te guiar do básico ao essencial em Linux, 
+      com foco em prática real e aprendizado progressivo.</p>
+    <br>
+    <p class="module__subtitle">Aqui você acompanha sua evolução, acessa os módulos e controla seu progresso ao longo da jornada.</p>
+  </header>
 
-  {# NOVO: Informação sobre a trilha #}
-  <div class="portal__roadmap-info">
-    <p class="portal__roadmap-text">
-      A trilha é progressiva e cada nível prepara você para o próximo. 
-      <strong>Recomendamos que siga a sequência</strong> para consolidar bem os conceitos.
+  <!-- EXPLICAÇÃO -->
+  <section id="explicacao" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-book"></i> Como funciona esta trilha</h2>
+    <ul class="portal__features-list">
+      <li><strong>Conteúdo Progressivo:</strong> Cada módulo constrói sobre o anterior, garantindo uma compreensão sólida.</li>
+      <li><strong>Exercícios Práticos:</strong> Teste seus conhecimentos com exercícios práticos ao final de cada módulo.</li>
+      <li><strong>Checklist de Progresso:</strong> Use o checklist no menu lateral para acompanhar seu progresso.</li>
+      <li><strong>Recursos Adicionais:</strong> Links e materiais para aprofundar seu conhecimento.</li>
+    </ul>
+  </section>
+
+  <!-- SOBRE O PROGRESSO -->
+  <section id="explicacao" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-chart-line"></i> Sobre o Progresso</h2>
+    <p>
+      Para manter seu progresso atualizado:
+      <ul class="portal__features-list">
+        <li>Marque o módulo como concluído apenas após finalizar todas as atividades.</li>
+        <li>A barra de progress mostra sua evolução na trilha.</li>
+        <li>O botão "Reiniciar Curso" zera o progresso salvo.</li>
+      </ul>
     </p>
-    
+
     {% set type = 'tip' %}
     {% set title = 'Dica' %}
-    {% set text = 'Você pode rastrear seu progresso conforme avança pelos módulos. Os módulos completados aparecerão com uma marcação especial!' %}
+    {% set text = 'A trilha é progressiva e cada nível prepara você para o próximo.
+    <strong>Recomendamos que siga a sequência</strong> para consolidar bem os conceitos.<br>
+    Você pode rastrear seu progresso conforme avança pelos módulos. Os módulos completados aparecerão com uma marcação especial!' %}
     {% include "partials/alert.njk" %}
-  </div>
+  </section>
 
 <!-- Barra de progresso -->
 <div class="portal__progress-overview">
@@ -44,7 +60,6 @@ asideType: home
     <i class="fa-solid fa-arrow-rotate-left"></i> Reiniciar Curso
   </button>
 </div>
-
 </section>
 
 <section class="portal__track">
@@ -208,6 +223,34 @@ asideType: home
       </button>
       <button class="reset-modal__btn reset-modal__btn--confirm" onclick="confirmReset();">
         <i class="fa-solid fa-arrow-rotate-left"></i> Reiniciar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal About (HTML) -->
+<div id="about-modal" class="reset-modal">
+  <div class="reset-modal__overlay"></div>
+  <div class="reset-modal__content">
+    <div class="reset-modal__header">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <h2 class="reset-modal__title">Sobre o Curso</h2>
+    </div>
+
+    <p class="reset-modal__message">
+        Ao final desta trilha, você vai dominar:
+    </p>
+    <ul class="portal__features-list">
+        <li>Comandos essenciais do terminal Linux.</li>
+        <li>Gerenciamento de arquivos e diretórios.</li>
+        <li>Permissões de acesso e segurança básica.</li>
+        <li>Processos e gerenciamento de recursos.</li>
+        <li>Configuração e diagnóstico de redes.</li>
+    </ul>
+    
+    <div class="reset-modal__actions">
+      <button class="reset-modal__btn reset-modal__btn--cancel" onclick="closeResetModal();">
+        <i class="fa-solid fa-circle-check"></i> Fechar
       </button>
     </div>
   </div>
