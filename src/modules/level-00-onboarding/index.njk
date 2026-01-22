@@ -1,13 +1,148 @@
 ---
-layout: layouts/construction.njk
-pageTitle: Level 00 - Onboarding
-title: Level 00 - Onboarding em Construção
+layout: layouts/module.njk
+pageTitle: Linux Studies — Onboarding
+title: Level 00 - Onboarding
 headerType: doc
-asideType: doc
-constructionMessage: "A seção em desenvolvimento. Estamos preparando conteúdos de alta qualidade para você!"
-constructionEstimate: "Fevereiro de 2026"
-constructionProgress: 10
+asideType: module
+moduleTitle: "Level 00 - Onboarding"
+moduleHasExplanation: true
+moduleHasChecklist: true
+moduleHasExercises: true
+moduleHasChallenges: true
+moduleChecklist:
+  - id: "introduction"
+    label: "Ler a Introdução"
+    completed: false
+  - id: "objetivos"
+    label: "Ler os Objetivos"
+    completed: false
+  - id: "sobre-a-trilha"
+    label: "Ler sobre a Trilha"
+    completed: false
+  - id: "como-estudar"
+    label: "Ler as Dicas de Estudo"
+    completed: false
+  - id: "read-checklist"
+    label: "Ler sobre o Checklist"
+    completed: false
+  - id: "exercise-1-complete"
+    label: "Completar Exercício 1"
+    completed: false
+  - id: "challenge-1-complete"
+    label: "Completar Desafio 1"
+    completed: false
+asideTopButton:
+  href: "/"
+  text: "Início"
+  variant: "nav"
 permalink: /modules/00-onboarding/
-
 ---
 
+<section class="module__content">
+  <header class="module__header-content">
+    <h1 class="module__main-title"><i class="fa-solid fa-rocket"></i> Bem-vindo ao Onboarding!</h1>
+    <p class="module__subtitle">Este módulo é um ambiente de treinamento. Aqui você vai aprender COMO usar o Linux Studies.</p>
+    <p>O Onboarding vai te ajudar a entender:</p>
+    <ul class="portal__features-list">
+      <li>Como funcionam os exercícios.</li>
+      <li>Como são os desafios.</li>
+      <li>Como usar o checklist para rastrear seu progresso.</li>
+      <li>Quando marcar um módulo como concluído.</li>
+    </ul>
+  </header>
+
+  <!-- OBJETIVOS -->
+  <section id="explicacao" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-check"></i> Objetivos do Módulo</h2>
+    <p>Ao final deste módulo, você será capaz de:</p>
+    <ul class="portal__features-list">
+      <li>Navegar pela plataforma com confiança.</li>
+      <li>Entender a estrutura dos módulos.</li>
+      <li>Executar exercícios e desafios de forma correta.</li>
+      <li>Utilizar o checklist e o progresso da trilha.</li>
+    </ul>
+  </section>
+
+  <!-- SOBRE A TRILHA -->
+  {# <section id="sobre-a-trilha" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-layer-group"></i> Sobre a Trilha</h2>
+    <p>
+        Ao final desta trilha, você vai dominar:
+    </p>
+    <ul class="portal__features-list">
+        <li>Comandos essenciais do terminal Linux.</li>
+        <li>Gerenciamento de arquivos e diretórios.</li>
+        <li>Permissões de acesso e segurança básica.</li>
+        <li>Processos e gerenciamento de recursos.</li>
+        <li>Configuração e diagnóstico de redes.</li>
+    </ul>
+  </section> #}
+
+  <!-- COMO ESTUDAR -->
+    <section id="como-estudar" class="module__section">
+        <h2 class="module__section-title"><i class="fa-solid fa-graduation-cap"></i> Dicas para Estudar</h2>
+        <p>
+        Para aproveitar ao máximo esta trilha de estudos, considere as seguintes dicas:
+        </p>
+        <ul class="portal__features-list">
+        <li>Pratique Regularmente: A prática leva à perfeição. Tente aplicar o que você aprende em um ambiente real.</li>
+        <li>Faça Anotações: Anotar pontos importantes pode ajudar na retenção de informações.</li>
+        <li>Revise Conteúdos: Volte aos módulos anteriores para revisar conceitos quando necessário.</li>
+        </ul>
+    </section>
+
+  <!-- CHECKLIST -->
+  <section id="checklist" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-list-check"></i> Usando o Checklist</h2>
+    <p>
+        O checklist no menu lateral é sua ferramenta para rastrear o que você já completou e o que ainda falta fazer. Marque os itens conforme avança para manter-se organizado e motivado.
+    </p>    
+    <ul class="portal__features-list">
+        <li>Marque Itens Completos: Clique na caixa ao lado de cada item para marcá-lo como concluído.</li>
+        <li>Revise o Progresso: Use o checklist para revisar o que você já aprendeu e o que ainda precisa fazer.</li>
+        <li>Mantenha-se Motivado: Ver seu progresso visualmente pode ser um grande motivador!</li>
+    </ul>
+    
+    {% set type = 'tip' %}
+    {% set title = 'Dica' %}
+    {% set text = 'Use o checklist no menu lateral para treinar como rastrear seu progresso dentro deste módulo!' %}
+    {% include "partials/alert.njk" %}
+  </section>
+
+
+  <!-- EXERCÍCIOS -->
+  <section id="exercicios" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-pen"></i> Exercícios</h2>
+    
+    <div class="module__exercise">
+      <h3 class="module__exercise-title">Exercício 1: Título do Exercício</h3>
+      <p>O que deve ser feito:</p>
+      <ol>
+        <li>Lista de ações a serem realizadas...</li>
+        <li>Lista de ações a serem realizadas...</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DESAFIOS -->
+  <section id="desafios" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-trophy"></i> Desafios</h2>
+
+    <div class="module__exercise">
+      <h3 class="module__exercise-title">Desafio 1: Título do Exercício</h3>
+      <p>O que deve ser feito:</p>
+      <ul class="portal__features-list">
+        <li>Lista de ações a serem realizadas...</li>
+        <li>Lista de ações a serem realizadas...</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA para próximo módulo -->
+  <footer class="module__footer">
+    <a href="/modules/01-terminal-basics/" class="module__next-btn">
+      <span>Próximo: Level 01 - Terminal Basics</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </footer>
+</section>
