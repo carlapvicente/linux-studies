@@ -46,6 +46,14 @@
 
   --container: min(98vw, 2200px);
 
+  /* Transições padrão */
+  --transition-smooth: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+  --transition-fast: all 140ms ease;
+
+  /* Container styles (reaproveitável) */
+  --container-border: 1px solid rgba(0, 229, 255, 0.35);
+  --container-bg: rgba(255, 255, 255, 0.02);
+  --container-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
 }
 
 /* ---------- Reset-ish ---------- */
@@ -87,7 +95,7 @@ body::before {
     linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
 
-  /* 👇 glow agora se ajusta à tela inteira */
+  /* glow agora se ajusta à tela inteira */
   background-size:
     100% 100%,
     100% 100%,
@@ -145,10 +153,10 @@ button:focus-visible {
   max-width: var(--container);
   margin: 28px auto 18px;
   padding: 22px clamp(18px, 2.2vw, 28px);
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  border: var(--container-border);
   border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
+  box-shadow: var(--container-shadow);
 }
 
 .portal__title {
@@ -192,11 +200,6 @@ button:focus-visible {
   border-color: rgba(0, 229, 255, 0.45);
 }
 
-.aside__samples-button .btn:hover {
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(124, 77, 255, 0.20));
-  border-color: rgba(255, 215, 0, 0.65);
-}
-
 /* ---------- Aside: Top Button ---------- */
 .aside__top-button {
   margin-bottom: 16px;
@@ -214,7 +217,7 @@ button:focus-visible {
 
 .portal__nav-link{
   width: 100%;
-  justify-content: center; /* ou flex-start se você preferir alinhado à esquerda */
+  justify-content: center;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -225,10 +228,11 @@ button:focus-visible {
   box-shadow: 0 0 14px rgba(124, 77, 255, 0.12);
   color: var(--text);
   text-decoration: none;
-  transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  transition: var(--transition-smooth);
 }
 
-.portal__nav-link:hover {
+.portal__nav-link:hover,
+.portal__nav-link:focus-visible {
   transform: translateY(-1px);
   border-color: rgba(255, 215, 0, 0.65);
   background: rgba(255, 45, 170, 0.10);
@@ -242,7 +246,12 @@ button:focus-visible {
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.28);
 }
 
-
+.portal__nav-link[aria-current="page"] {
+  border-color: rgba(255, 215, 0, 0.85);
+  background: rgba(255, 45, 170, 0.10);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.32);
+  color: var(--accent-gold);
+}
 
 /* ---------- Layout (aside + main) ---------- */
 .portal__layout {
@@ -272,10 +281,10 @@ button:focus-visible {
 
 /* ---------- Aside (Guide) ---------- */
 .portal__aside {
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  border: var(--container-border);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
+  background: var(--container-bg);
+  box-shadow: var(--container-shadow);
   padding: 18px;
 }
 
@@ -335,10 +344,10 @@ button:focus-visible {
 
 /* ---------- Main ---------- */
 .portal__main {
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  border: var(--container-border);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 0 26px rgba(0, 229, 255, 0.12);
+  background: var(--container-bg);
+  box-shadow: var(--container-shadow);
   padding: 20px;
 }
 
@@ -521,7 +530,7 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
   height: 100%;
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition: var(--transition-fast);
 }
 
 /* subtle scanline / glow accent */
@@ -598,7 +607,7 @@ button:focus-visible {
   color: var(--text);
   font-weight: 600;
   text-decoration: none;
-  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+  transition: var(--transition-smooth);
 }
 
 .module__link:hover {
@@ -623,7 +632,7 @@ button:focus-visible {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 140ms ease;
+  transition: var(--transition-fast);
 }
 
 .module__complete-btn:hover {
@@ -736,7 +745,7 @@ button:focus-visible {
   color: var(--text);
   font-weight: 600;
   text-decoration: none;
-  transition: all 140ms ease;
+  transition: var(--transition-fast);
 }
 
 .module__next-btn:hover {
@@ -778,7 +787,7 @@ button:focus-visible {
   color: var(--muted);
   text-decoration: none;
   border-radius: 4px;
-  transition: all 140ms ease;
+  transition: var(--transition-fast);
   font-size: 13px;
 }
 
@@ -916,11 +925,12 @@ button:focus-visible {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
-  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+  transition: var(--transition-smooth);
   border-radius: 14px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
   transform: translateY(-1px);
   border-color: rgba(255, 215, 0, 0.65);
   background: rgba(255, 45, 170, 0.12);
@@ -1331,7 +1341,7 @@ button:focus-visible {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 140ms ease;
+  transition: var(--transition-fast);
 }
 
 .portal__progress-reset-btn:hover {
@@ -1483,7 +1493,7 @@ button:focus-visible {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 140ms ease;
+  transition: var(--transition-fast);
   text-decoration: none;
 }
 
@@ -1543,7 +1553,4 @@ button:focus-visible {
   }
 }
 
-/* ---------- End of Construction Page ---------- */
-/* =========================================================
-   End of File
-   ========================================================= */ 
+/* ---------- End File ---------- */
