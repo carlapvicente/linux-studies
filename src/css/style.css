@@ -656,7 +656,7 @@ button:focus-visible {
 }
 
 .module__card--completed::after {
-  content: "✓";
+  content: "\f05d";
   position: absolute;
   top: 8px;
   right: 12px;
@@ -671,6 +671,8 @@ button:focus-visible {
   font-size: 14px;
   color: var(--cyan);
   text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
 
 /* ---------- Module Layout & Content ---------- */
