@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
 
   // ✨ Passar variável de ambiente para templates
   eleventyConfig.addGlobalData("isDevelopment", process.env.ELEVENTY_ENV !== "production");
+  eleventyConfig.addGlobalData("buildTime", new Date().getTime());
 
   // ✨ Excluir samples em produção
   const isProduction = process.env.ELEVENTY_ENV === "production";
