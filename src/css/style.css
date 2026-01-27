@@ -88,12 +88,12 @@ body::before {
 
   background-image:
     /* glow único e fluido */
-    radial-gradient(circle at 30% 20%, rgba(0, 229, 255, 0.12), transparent 65%),
-    radial-gradient(circle at 70% 80%, rgba(255, 45, 170, 0.10), transparent 70%),
+    radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--cyan), transparent 88%), transparent 65%),
+    radial-gradient(circle at 70% 80%, color-mix(in srgb, var(--magenta), transparent 90%), transparent 70%),
 
     /* grid repetido */
-    linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--cyan), transparent 95%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--cyan), transparent 95%) 1px, transparent 1px);
 
   /* glow agora se ajusta à tela inteira */
   background-size:
@@ -128,8 +128,8 @@ button:focus-visible {
   top: 12px;
   left: 12px;
   padding: 10px 12px;
-  background: rgba(0, 0, 0, 0.80);
-  border: 1px solid rgba(0, 229, 255, 0.55);
+  background: color-mix(in srgb, var(--bg), transparent 20%);
+  border: 1px solid var(--border-strong);
   border-radius: 12px;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
@@ -163,7 +163,7 @@ button:focus-visible {
   margin: 0;
   font-size: clamp(28px, 3.6vw, 44px);
   letter-spacing: 0.6px;
-  text-shadow: 0 0 14px rgba(0, 229, 255, 0.35);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--cyan), transparent 65%);
 }
 
 .portal__subtitle {
@@ -222,7 +222,7 @@ button:focus-visible {
 
 .breadcrumb__link:hover {
   opacity: 1;
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--cyan), transparent 60%);
   text-decoration: none;
 }
 
@@ -248,8 +248,8 @@ button:focus-visible {
 
 .aside__samples-button .btn {
   width: 100%;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(124, 77, 255, 0.10));
-  border-color: rgba(0, 229, 255, 0.45);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cyan), transparent 88%), color-mix(in srgb, var(--violet), transparent 90%));
+  border-color: color-mix(in srgb, var(--cyan), transparent 55%);
 }
 
 /* ---------- Aside: Top Button ---------- */
@@ -275,9 +275,9 @@ button:focus-visible {
   gap: 8px;
   padding: 10px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(124, 77, 255, 0.35);
-  background: rgba(124, 77, 255, 0.07);
-  box-shadow: 0 0 14px rgba(124, 77, 255, 0.12);
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 65%);
+  background: color-mix(in srgb, var(--violet), transparent 93%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--violet), transparent 88%);
   color: var(--text);
   text-decoration: none;
   transition: var(--transition-smooth);
@@ -286,22 +286,22 @@ button:focus-visible {
 .portal__nav-link:hover,
 .portal__nav-link:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(255, 215, 0, 0.65);
-  background: rgba(255, 45, 170, 0.10);
-  box-shadow: 0 0 18px rgba(255, 215, 0, 0.24);
+  border-color: color-mix(in srgb, var(--accent-gold), transparent 35%);
+  background: color-mix(in srgb, var(--magenta), transparent 90%);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent-gold), transparent 76%);
   text-decoration: none;
 }
 
 .portal__nav-link:focus-visible {
-  outline: 2px solid rgba(255, 215, 0, 0.75);
+  outline: 2px solid color-mix(in srgb, var(--accent-gold), transparent 25%);
   outline-offset: 3px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.28);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-gold), transparent 72%);
 }
 
 .portal__nav-link[aria-current="page"] {
-  border-color: rgba(255, 215, 0, 0.85);
-  background: rgba(255, 45, 170, 0.10);
-  box-shadow: 0 0 18px rgba(255, 215, 0, 0.32);
+  border-color: color-mix(in srgb, var(--accent-gold), transparent 15%);
+  background: color-mix(in srgb, var(--magenta), transparent 90%);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent-gold), transparent 68%);
   color: var(--accent-gold);
 }
 
@@ -407,7 +407,7 @@ button:focus-visible {
   margin: 0 0 10px;
   font-size: 20px;
   letter-spacing: 0.4px;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.18);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--cyan), transparent 82%);
 }
 
 .portal__introduction-text {
@@ -420,7 +420,7 @@ button:focus-visible {
 
 .portal__divider {
   border: none;
-  border-top: 1px solid rgba(0,229,255,0.25);
+  border-top: 1px solid var(--cyan-muted);
   margin: 24px 0;
 }
 
@@ -441,7 +441,7 @@ button:focus-visible {
 /* detalhe TRON: bullet glow - Ouro quente */
 .portal__features-list li::before {
   content: "▸";
-  color: #FFD700;
+  color: var(--accent-gold);
   position: absolute;
   left: -12px;
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.35);
@@ -463,7 +463,7 @@ button:focus-visible {
   content: "$ bash";
   display: block;
   font-size: 12px;
-  color: rgba(0, 229, 255, 0.7);
+  color: color-mix(in srgb, var(--cyan), transparent 30%);
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -472,7 +472,7 @@ button:focus-visible {
   content: "PS>";
   display: block;
   font-size: 12px;
-  color: rgba(255, 215, 0, 0.7);
+  color: color-mix(in srgb, var(--accent-gold), transparent 30%);
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -481,7 +481,7 @@ button:focus-visible {
   content: "# markdown";
   display: block;
   font-size: 12px;
-  color: rgba(255, 45, 170, 0.7);
+  color: color-mix(in srgb, var(--magenta), transparent 30%);
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -528,8 +528,8 @@ button:focus-visible {
 }
 
 .portal__progress-overview {
-  background: rgba(0, 229, 255, 0.05);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: color-mix(in srgb, var(--cyan), transparent 95%);
+  border: 1px solid var(--cyan-muted);
   border-radius: var(--radius-sm);
   padding: 16px;
   margin: 24px 0;
@@ -546,8 +546,8 @@ button:focus-visible {
 .portal__progress-bar {
   width: 100%;
   height: 8px;
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  background: color-mix(in srgb, var(--cyan), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 80%);
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 8px;
@@ -556,7 +556,7 @@ button:focus-visible {
 .portal__progress-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--cyan), var(--magenta));
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cyan), transparent 70%);
   transition: width 600ms ease-out;
 }
 
@@ -571,13 +571,13 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 65%);
   background: linear-gradient(
     180deg,
-    rgba(0, 229, 255, 0.03),
-    rgba(0, 229, 255, 0.01)
+    color-mix(in srgb, var(--cyan), transparent 97%),
+    color-mix(in srgb, var(--cyan), transparent 99%)
   );
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.12);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--cyan), transparent 88%);
   padding: 16px;
   position: relative;
   overflow: hidden;
@@ -590,8 +590,8 @@ button:focus-visible {
   content: "";
   position: absolute;
   inset: -2px;
-  background: radial-gradient(circle at 30% 20%, 
-    rgba(0, 229, 255, 0.12), 
+  background: radial-gradient(circle at 30% 20%,
+    color-mix(in srgb, var(--cyan), transparent 88%),
     transparent 65%);
   opacity: 0.65;
   filter: blur(104px);
@@ -600,13 +600,13 @@ button:focus-visible {
 
 .module__card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 45, 170, 0.55);
-  background: radial-gradient(circle at 30% 20%, 
-    rgba(255, 45, 170, 0.12), 
+  border-color: color-mix(in srgb, var(--magenta), transparent 45%);
+  background: radial-gradient(circle at 30% 20%,
+    color-mix(in srgb, var(--magenta), transparent 88%),
     transparent 70%);
   box-shadow:
-    0 0 26px rgba(255, 45, 170, 0.20),
-    0 0 14px rgba(255, 45, 170, 0.12);
+    0 0 26px color-mix(in srgb, var(--magenta), transparent 80%),
+    0 0 14px color-mix(in srgb, var(--magenta), transparent 88%);
 }
 
 .module__header {
@@ -654,8 +654,8 @@ button:focus-visible {
   gap: 10px;
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(124, 77, 255, 0.35);
-  background: rgba(124, 77, 255, 0.07);
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 65%);
+  background: color-mix(in srgb, var(--violet), transparent 93%);
   color: var(--text);
   font-weight: 600;
   text-decoration: none;
@@ -664,33 +664,26 @@ button:focus-visible {
 
 .module__link:hover {
   transform: translateY(-1px);
-  border-color: rgba(255, 215, 0, 0.65);
-  background: rgba(255, 45, 170, 0.12);
-  box-shadow: 0 0 14px rgba(255, 215, 0, 0.28);
+  border-color: color-mix(in srgb, var(--accent-gold), transparent 35%);
+  background: color-mix(in srgb, var(--magenta), transparent 88%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent-gold), transparent 72%);
   text-decoration: none;
 }
 
 /* ---------- Module Complete Button ---------- */
 .module__complete-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   margin-top: 8px;
   padding: 8px 12px;
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  background: rgba(0, 229, 255, 0.08);
-  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 65%);
+  background: color-mix(in srgb, var(--cyan), transparent 92%);
   font-size: 12px;
-  font-weight: 600;
   border-radius: 8px;
-  cursor: pointer;
-  transition: var(--transition-fast);
 }
 
 .module__complete-btn:hover {
-  border-color: rgba(0, 229, 255, 0.65);
-  background: rgba(0, 229, 255, 0.15);
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+  border-color: color-mix(in srgb, var(--cyan), transparent 35%);
+  background: color-mix(in srgb, var(--cyan), transparent 85%);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cyan), transparent 80%);
 }
 
 .module__complete-btn:active {
@@ -706,8 +699,8 @@ button:focus-visible {
 
 /* ---------- Module Complete ---------- */
 .module__card--completed {
-  border-color: rgba(0, 229, 255, 0.65);
-  background: linear-gradient(180deg, rgba(0, 229, 255, 0.08), rgba(0, 229, 255, 0.03));
+  border-color: color-mix(in srgb, var(--cyan), transparent 35%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--cyan), transparent 92%), color-mix(in srgb, var(--cyan), transparent 97%));
 }
 
 .module__card--completed::after {
@@ -717,15 +710,15 @@ button:focus-visible {
   right: 12px;
   width: 24px;
   height: 24px;
-  background: rgba(0, 229, 255, 0.2);
-  border: 1px solid rgba(0, 229, 255, 0.5);
+  background: color-mix(in srgb, var(--cyan), transparent 80%);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 50%);
   border-radius: 50%;
   display: none;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   color: var(--cyan);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--cyan), transparent 60%);
 }
 
 /* ---------- Module Layout & Content ---------- */
@@ -743,7 +736,7 @@ button:focus-visible {
   margin: 0 0 8px;
   font-size: clamp(28px, 4vw, 40px);
   letter-spacing: 0.3px;
-  text-shadow: 0 0 14px rgba(0, 229, 255, 0.2);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--cyan), transparent 80%);
 }
 
 .module__subtitle {
@@ -754,9 +747,9 @@ button:focus-visible {
 
 .module__section {
   padding: 20px;
-  border: 1px solid rgba(0, 229, 255, 0.15);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 85%);
   border-radius: var(--radius-sm);
-  background: rgba(0, 229, 255, 0.03);
+  background: color-mix(in srgb, var(--cyan), transparent 97%);
 }
 
 .module__section-title {
@@ -786,7 +779,7 @@ button:focus-visible {
   justify-content: flex-end;
   margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px solid rgba(0, 229, 255, 0.15);
+  border-top: 1px solid color-mix(in srgb, var(--cyan), transparent 85%);
 }
 
 .module__next-btn {
@@ -794,8 +787,8 @@ button:focus-visible {
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
-  background: linear-gradient(135deg, rgba(124, 77, 255, 0.15), rgba(124, 77, 255, 0.08));
-  border: 1px solid rgba(124, 77, 255, 0.35);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--violet), transparent 85%), color-mix(in srgb, var(--violet), transparent 92%));
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 65%);
   border-radius: 8px;
   color: var(--text);
   font-weight: 600;
@@ -804,9 +797,9 @@ button:focus-visible {
 }
 
 .module__next-btn:hover {
-  border-color: rgba(255, 215, 0, 0.65);
-  background: rgba(255, 45, 170, 0.12);
-  box-shadow: 0 0 14px rgba(255, 215, 0, 0.28);
+  border-color: color-mix(in srgb, var(--accent-gold), transparent 35%);
+  background: color-mix(in srgb, var(--magenta), transparent 88%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent-gold), transparent 72%);
   transform: translateX(2px);
 }
 
@@ -847,7 +840,7 @@ button:focus-visible {
 }
 
 .module-nav__link:hover {
-  background: rgba(0, 229, 255, 0.1);
+  background: color-mix(in srgb, var(--cyan), transparent 90%);
   color: var(--cyan);
 }
 
@@ -855,8 +848,8 @@ button:focus-visible {
 .module-checklist {
   margin: 20px 0;
   padding: 16px;
-  background: rgba(0, 229, 255, 0.05);
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  background: color-mix(in srgb, var(--cyan), transparent 95%);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 80%);
   border-radius: var(--radius-sm);
 }
 
@@ -892,7 +885,7 @@ button:focus-visible {
 }
 
 .module-checklist__item:hover {
-  background: rgba(0, 229, 255, 0.08);
+  background: color-mix(in srgb, var(--cyan), transparent 92%);
 }
 
 .module-checklist__input {
@@ -917,7 +910,7 @@ button:focus-visible {
 .module-checklist__summary {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid rgba(0, 229, 255, 0.15);
+  border-top: 1px solid color-mix(in srgb, var(--cyan), transparent 85%);
 }
 
 .module-checklist__summary-text {
@@ -935,7 +928,7 @@ button:focus-visible {
 .module-progress-mini__bar {
   width: 100%;
   height: 6px;
-  background: rgba(0, 229, 255, 0.1);
+  background: color-mix(in srgb, var(--cyan), transparent 90%);
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 8px;
@@ -944,7 +937,7 @@ button:focus-visible {
 .module-progress-mini__fill {
   height: 100%;
   background: linear-gradient(90deg, var(--cyan), var(--magenta));
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--cyan), transparent 70%);
   transition: width 400ms ease;
 }
 
@@ -968,35 +961,43 @@ button:focus-visible {
   color: var(--muted);
 }
 
-/* ---------- Button Component ---------- */
-.btn {
+/* ---------- Shared Button Styles ---------- */
+.btn,
+.module__complete-btn,
+.portal__progress-reset-btn,
+.reset-modal__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 12px;
-  border: 1px solid rgba(124, 77, 255, 0.35);
-  background: rgba(124, 77, 255, 0.07);
-  color: var(--text);
-  text-decoration: none;
   font-weight: 600;
-  transition: var(--transition-smooth);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+/* ---------- Button Component ---------- */
+.btn {
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 65%);
+  background: color-mix(in srgb, var(--violet), transparent 93%);
+  color: var(--text);
   border-radius: 14px;
 }
 
 .btn:hover,
 .btn:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(255, 215, 0, 0.65);
-  background: rgba(255, 45, 170, 0.12);
-  box-shadow: 0 0 14px rgba(255, 215, 0, 0.28);
+  border-color: color-mix(in srgb, var(--accent-gold), transparent 35%);
+  background: color-mix(in srgb, var(--magenta), transparent 88%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent-gold), transparent 72%);
   text-decoration: none;
 }
 
 .btn:focus-visible {
-  outline: 2px solid rgba(255, 215, 0, 0.75);
+  outline: 2px solid color-mix(in srgb, var(--accent-gold), transparent 25%);
   outline-offset: 3px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.28);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-gold), transparent 72%);
 }
 
 /* Variant: Nav (Navegação) */
@@ -1019,10 +1020,6 @@ button:focus-visible {
   flex-shrink: 0;
 }
 
-.btn__text {
-  /* flex-grow: 1; */
-}
-
 /* ---------- Footer ---------- */
 .portal__footer {
   max-width: var(--container);
@@ -1038,8 +1035,8 @@ button:focus-visible {
 
 .portal__footer-notice {
   margin: 0;
-  color: rgba(255, 45, 170, 0.85);
-  text-shadow: 0 0 12px rgba(255, 45, 170, 0.20);
+  color: color-mix(in srgb, var(--magenta), transparent 15%);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--magenta), transparent 80%);
 }
 
 /* ---------- Alert Component ---------- */
@@ -1067,9 +1064,9 @@ button:focus-visible {
   background: linear-gradient(
     120deg,
     transparent 0%,
-    color-mix(in srgb, var(--accent) 18%, transparent) 30%,
+    color-mix(in srgb, var(--accent), transparent 82%) 30%,
     transparent 60%,
-    color-mix(in srgb, var(--accent) 12%, transparent) 78%,
+    color-mix(in srgb, var(--accent), transparent 88%) 78%,
     transparent 100%
   );
   opacity: 0.55;
@@ -1097,29 +1094,9 @@ button:focus-visible {
 }
 
 /* Cores dos ícones por tipo de alerta */
-.alert--note .alert__icon {
-  color: rgba(124, 77, 255, 0.9);
-  text-shadow: 0 0 8px rgba(124, 77, 255, 0.3);
-}
-
-.alert--tip .alert__icon {
-  color: rgba(27, 231, 88, 0.9);
-  text-shadow: 0 0 8px rgba(27, 231, 88, 0.3);
-}
-
-.alert--information .alert__icon {
-  color: rgba(0, 229, 255, 0.9);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
-}
-
-.alert--caution .alert__icon {
-  color: rgba(255, 65, 108, 0.95);
-  text-shadow: 0 0 8px rgba(255, 65, 108, 0.3);
-}
-
-.alert--warning .alert__icon {
-  color: rgba(255, 215, 0, 0.95);
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+.alert__icon {
+  color: color-mix(in srgb, var(--accent), transparent 10%);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 70%);
 }
 
 .alert__title {
@@ -1152,86 +1129,51 @@ button:focus-visible {
 /* Alert: Note (Observation) - Violet */ 
 .alert--note {
   --accent: rgb(124, 77, 255);
-  border-left-color: rgba(124, 77, 255, 0.55);
-  background: linear-gradient(
-    90deg,
-    rgba(124, 77, 255, 0.04),
-    rgba(124, 77, 255, 0.01)
-  );
-  box-shadow: 0 0 12px rgba(124, 77, 255, 0.10);
 }
 
 .alert--note .alert__title {
-  color: rgba(124, 77, 255, 0.95);
-  text-shadow: 0 0 8px rgba(124, 77, 255, 0.25);
+  color: color-mix(in srgb, var(--accent), transparent 5%);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 75%);
 }
 
 /* Alert: Tip - Cyan */
 .alert--tip {
   --accent: rgb(27, 231, 88);
-  border-left-color: rgba(27, 231, 88, 0.55);
-  background: linear-gradient(
-    90deg,
-    rgba(27, 231, 88, 0.04),
-    rgba(27, 231, 88, 0.01)
-  );
-  box-shadow: 0 0 12px rgba(27, 231, 88, 0.10);
 }
 
 .alert--tip .alert__title {
-  color: rgba(27, 231, 88, 0.95);
-  text-shadow: 0 0 8px rgba(27, 231, 88, 0.25);
+  color: color-mix(in srgb, var(--accent), transparent 5%);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 75%);
 }
 
 /* Alert: Information - Magenta */
 .alert--information {
   --accent: rgb(0, 229, 255);
-  border-left-color: rgba(0, 229, 255, 0.55);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 229, 255, 0.04),
-    rgba(0, 229, 255, 0.01)
-  );
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.10);
 }
 
 .alert--information .alert__title {
-  color: rgba(0, 229, 255, 0.95);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+  color: color-mix(in srgb, var(--accent), transparent 5%);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 75%);
 }
 
 /* Alert: Caution - Ouro */
 .alert--caution {
   --accent: rgb(255, 65, 108);
-  border-left-color: rgba(255, 65, 108, 0.65);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 65, 108, 0.05),
-    rgba(255, 65, 108, 0.01)
-  );
-  box-shadow: 0 0 12px rgba(255, 65, 108, 0.12);
 }
 
 .alert--caution .alert__title {
-  color: rgba(255, 65, 108, 0.95);
-  text-shadow: 0 0 8px rgba(255, 65, 108, 0.30);
+  color: color-mix(in srgb, var(--accent), transparent 5%);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 70%);
 }
 
 /* Alert: Warning - Vermelho (novo acento) */
 .alert--warning {
   --accent: rgb(255, 215, 0);
-  border-left-color: rgba(255, 215, 0, 0.65);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 215, 0, 0.05),
-    rgba(255, 215, 0, 0.01)
-  );
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.12);
 }
 
 .alert--warning .alert__title {
-  color: rgba(255, 215, 0, 0.95);
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.30);
+  color: color-mix(in srgb, var(--accent), transparent 5%);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 70%);
 }
 
 /* ---------- Reduced motion ---------- */
@@ -1272,7 +1214,7 @@ button:focus-visible {
   font-size: 80px;
   margin-bottom: 24px;
   color: var(--cyan);
-  text-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--cyan), transparent 60%);
   animation: constructionPulse 2.5s ease-in-out infinite;
 }
 
@@ -1291,7 +1233,7 @@ button:focus-visible {
   margin: 0 0 16px;
   font-size: clamp(28px, 5vw, 48px);
   letter-spacing: 0.6px;
-  text-shadow: 0 0 20px rgba(0, 229, 255, 0.25);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--cyan), transparent 75%);
   background: linear-gradient(135deg, var(--cyan), var(--magenta));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1309,10 +1251,10 @@ button:focus-visible {
 .construction__estimate {
   margin: 16px 0 0;
   font-size: 14px;
-  color: rgba(255, 215, 0, 0.85);
+  color: color-mix(in srgb, var(--accent-gold), transparent 15%);
   padding: 12px 16px;
-  background: rgba(255, 215, 0, 0.08);
-  border: 1px solid rgba(255, 215, 0, 0.25);
+  background: color-mix(in srgb, var(--accent-gold), transparent 92%);
+  border: 1px solid color-mix(in srgb, var(--accent-gold), transparent 75%);
   border-radius: var(--radius-sm);
   display: inline-block;
 }
@@ -1362,17 +1304,17 @@ button:focus-visible {
 .construction__progress-bar {
   width: 100%;
   height: 8px;
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: color-mix(in srgb, var(--cyan), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 75%);
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.05);
+  box-shadow: inset 0 0 10px color-mix(in srgb, var(--cyan), transparent 95%);
 }
 
 .construction__progress-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--cyan), var(--magenta));
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cyan), transparent 60%);
   transition: width 800ms ease-out;
 }
 
@@ -1384,25 +1326,19 @@ button:focus-visible {
 
 /* ---------- Progress Reset Button ---------- */
 .portal__progress-reset-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   margin-top: 16px;
   padding: 8px 14px;
-  border: 1px solid rgba(255, 65, 108, 0.35);
-  background: rgba(255, 65, 108, 0.08);
-  color: rgba(255, 65, 108, 0.9);
+  border: 1px solid color-mix(in srgb, var(--caution), transparent 65%);
+  background: color-mix(in srgb, var(--caution), transparent 92%);
+  color: color-mix(in srgb, var(--caution), transparent 10%);
   font-size: 12px;
-  font-weight: 600;
   border-radius: 8px;
-  cursor: pointer;
-  transition: var(--transition-fast);
 }
 
 .portal__progress-reset-btn:hover {
-  border-color: rgba(255, 65, 108, 0.65);
-  background: rgba(255, 65, 108, 0.15);
-  box-shadow: 0 0 12px rgba(255, 65, 108, 0.2);
+  border-color: color-mix(in srgb, var(--caution), transparent 35%);
+  background: color-mix(in srgb, var(--caution), transparent 85%);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--caution), transparent 80%);
 }
 
 .portal__progress-reset-btn:active {
@@ -1517,7 +1453,7 @@ button:focus-visible {
   font-weight: 700;
   letter-spacing: 0.3px;
   color: var(--text);
-  text-shadow: 0 0 10px rgba(255, 45, 170, 0.15);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--magenta), transparent 85%);
 }
 
 .reset-modal__message {
@@ -1539,17 +1475,10 @@ button:focus-visible {
 }
 
 .reset-modal__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   padding: 10px 16px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  text-decoration: none;
 }
 
 .reset-modal__btn i {
