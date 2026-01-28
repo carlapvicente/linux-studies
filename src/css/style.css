@@ -24,6 +24,7 @@
 
   /* Acento quente - Ouro */
   --accent-gold: #FFD700;
+  --caution: rgb(255, 65, 108);
 
   /* Para borders e estados fracos */
   --cyan-muted: rgba(0, 229, 255, 0.25);
