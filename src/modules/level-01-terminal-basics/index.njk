@@ -25,11 +25,9 @@ moduleChecklist:
     label: "Completar Exercício 2"
     completed: false
 asideTopButton:
-  title: "Voltar para Início"
   href: "/"
   text: "Início"
   variant: "nav"
-  icon: "fa-solid fa-house"
 permalink: /modules/01-terminal-basics/
 ---
 {% import "macros/ui.njk" as ui %}
@@ -53,48 +51,12 @@ permalink: /modules/01-terminal-basics/
         </ul>
     </section>
 
-    <!-- OBJETIVOS -->
-    <section id="objetivos" class="module__section">
-        <h2 class="module__section-title"><i class="fa-solid fa-bullseye"></i> Objetivos do Módulo</h2>
-        <p>
-        Neste módulo, você aprenderá os conceitos básicos do terminal Linux, incluindo:
-        </p>
-        <ul class="portal__features-list">
-        <li>Comandos essenciais do terminal</li>
-        <li>Navegação no sistema de arquivos</li>
-        <li>Manipulação de arquivos e diretórios</li>
-        <li>Permissões de arquivos</li>
-
-      {% set contentA %}
-        <p>Teste Accordion...</p>
-      {% endset %}
-
-      {{ ui.accordion(id="faq-section", items=[
-        { title: "Pergunta A?", content: contentA },
-        { title: "Pergunta B?", content: "<p>Resposta direta aqui.</p>" }
-      ]) }}
-
-        </ul>
-    </section>
-
-    <!-- TESTE TABS -->
-    <section id="teste-tabs" class="module__section">
-        <h2 class="module__section-title"><i class="fa-solid fa-folder-open"></i> Teste de Tabs</h2>
-        {% set tabItems = [
-          { id: 'tab1', label: 'Aba 1', content: '<p>Conteúdo da Aba 1.</p>' },
-          { id: 'tab2', label: 'Aba 2', content: '<p>Conteúdo da Aba 2.</p>' },
-          { id: 'tab3', label: 'Aba 3', content: '<p>Conteúdo da Aba 3.</p>' }
-        ] %}
-        {{ ui.tabs(id='example-tabs', items=tabItems) }}
-    </section>
-
   <!-- CTA para próximo módulo -->
   <footer class="module__footer">
     {{ ui.button(
       href='/modules/02-filesystem/',
       text='Próximo: Level 02 - File System',
-      icon='fa-solid fa-arrow-right',
-      title='Próximo: Level 02 - File System'
+      icon='fa-solid fa-arrow-right'
     ) }}
   </footer>
 </section>
