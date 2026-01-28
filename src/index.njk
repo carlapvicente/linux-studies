@@ -176,12 +176,17 @@ asideType: home
         Parabéns! Você completou 100% da trilha <strong>Linux Studies</strong>.
       </p>
       <p class="reset-modal__message">
-        Continue praticando e explorando novos desafios!
+        Digite seu nome abaixo para emitir seu certificado:
       </p>
       
-      <div class="reset-modal__actions" style="justify-content: center; margin-top: 24px;">
-        <button class="btn" data-modal-close style="border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1);">
-          <i class="fa-solid fa-star" aria-hidden="true"></i> Incrível!
+      <input type="text" id="certificate-name" class="certificate-input" placeholder="Seu Nome Completo" autocomplete="off">
+      
+      <div class="reset-modal__actions" style="justify-content: center; margin-top: 24px; gap: 10px; flex-wrap: wrap;">
+        <button class="btn" onclick="generateCertificate()" style="border-color: var(--accent-gold); color: #000; background: var(--accent-gold);">
+          <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Baixar Certificado
+        </button>
+        <button class="btn" data-modal-close style="border-color: rgba(255,255,255,0.2); color: var(--muted); background: transparent;">
+          Fechar
         </button>
       </div>
     </div>

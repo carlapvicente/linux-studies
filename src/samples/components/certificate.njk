@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: Exemplo - Certificado
+asideType: samples
+---
+{% import "macros/ui.njk" as ui %}
+
+<section class="portal__section">
+    <h1 class="portal__section-title">Certificado de Conclusão</h1>
+    <p class="portal__introduction-text">
+      O componente de certificado gera um arquivo PDF no lado do cliente (navegador) utilizando a biblioteca <code>jsPDF</code>.
+      Ele é totalmente configurável através do arquivo <code>src/js/certificate.js</code>.
+    </p>
+
+    <hr class="portal__divider">
+
+    <!-- 1. SHOWCASE -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-eye"></i> Teste Visual</h2>
+    <p class="portal__introduction-text">
+      Clique no botão abaixo para gerar um certificado de exemplo com um nome fictício.
+    </p>
+
+    <div style="margin: 24px 0;">
+      <button class="btn" onclick="generateCertificate('Nome de Teste')" style="border-color: var(--accent-gold); color: #000; background: var(--accent-gold);">
+        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Gerar Certificado de Exemplo
+      </button>
+    </div>
+
+    <hr class="portal__divider">
+
+    <!-- 2. IMPLEMENTATION -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-code"></i> Configuração</h2>
+
+    {{ ui.alert(
+      type='information',
+      title='Arquivo de Configuração',
+      text='Para alterar textos, cores ou layout do certificado, edite o arquivo <code>src/js/certificate.js</code>.'
+    ) }}
+
+    <h3 class="portal__section-title">Exemplo de Configuração (JS)</h3>
+    {% set code = 'const certificateConfig = {\n  title: "CERTIFICADO DE CONCLUSÃO",\n  courseName: "Linux Studies",\n  // ... outras configurações\n};' %}
+    {{ ui.codeBlock(code=code, language='javascript') }}
+
+    <h3 class="portal__section-title">Uso na Aplicação</h3>
+    <p>A função <code>generateCertificate(nomeOpcional)</code> está disponível globalmente.</p>
+    {% set code = '// Usar input da página ou nome passado por parâmetro\ngenerateCertificate();\n\n// Forçar um nome específico\ngenerateCertificate("João da Silva");' %}
+    {{ ui.codeBlock(code=code, language='javascript') }}
+</section>
