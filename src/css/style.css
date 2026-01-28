@@ -486,6 +486,42 @@ button:focus-visible {
   font-weight: 600;
 }
 
+/* Code Block Wrapper & Copy Button */
+.code-block-wrapper {
+  position: relative;
+  margin: 16px 0;
+}
+
+.code-block__copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.code-block__copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Estado de sucesso (copiado) */
+.code-block__copy-btn.copied {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: rgba(0, 229, 255, 0.1);
+}
+
 /* ---------- Modules Grid ---------- */
 .portal__modules-list > li {
   height: 100%;
@@ -1536,6 +1572,54 @@ button:focus-visible {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ---------- Tabs Component ---------- */
+.tabs {
+  margin: 24px 0;
+}
+
+.tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 1px solid color-mix(in srgb, var(--cyan), transparent 80%);
+  margin-bottom: 0;
+}
+
+.tabs__trigger {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabs__trigger:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tabs__trigger[aria-selected="true"] {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
+  background: linear-gradient(to top, color-mix(in srgb, var(--cyan), transparent 95%), transparent);
+}
+
+.tabs__panel {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid color-mix(in srgb, var(--cyan), transparent 85%);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 /* ---------- End File ---------- */

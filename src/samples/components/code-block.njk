@@ -69,4 +69,23 @@ asideType: samples
         <li><strong>code</strong> (obrigatório): O conteúdo de texto/código a ser exibido.</li>
     </ul>
 
+    <hr class="portal__divider">
+
+    <h2 class="portal__section-title"><i class="fa-regular fa-copy"></i> Funcionalidade: Copiar</h2>
+    <p class="portal__introduction-text">
+      Todos os blocos de código gerados pela macro <code>ui.codeBlock</code> possuem nativamente a funcionalidade de copiar.
+    </p>
+
+    <ul class="portal__features-list">
+        <li><strong>Automático:</strong> Não é necessário configuração adicional.</li>
+        <li><strong>Hover:</strong> O botão aparece ao passar o mouse sobre o bloco (canto superior direito).</li>
+        <li><strong>Feedback:</strong> O ícone muda para confirmar a cópia.</li>
+    </ul>
+
+    <h3 class="portal__section-title">Teste aqui</h3>
+    {{ ui.codeBlock(
+      language='bash',
+      code='echo "Este código pode ser copiado!"'
+    ) }}
+
 </section>

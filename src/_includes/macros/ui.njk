@@ -75,7 +75,13 @@
 
 {# --- Code Block Macro --- #}
 {% macro codeBlock(code='', language='bash') %}
-<pre class="terminal__block terminal__block--{{ language }}"><code>{{ code }}</code></pre>
+<div class="code-block-wrapper">
+  <pre class="terminal__block terminal__block--{{ language }}"><code>{{ code }}</code></pre>
+  <button class="code-block__copy-btn" aria-label="Copiar código" title="Copiar código">
+    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+    <span>Copiar</span>
+  </button>
+</div>
 {% endmacro %}
 
 {# --- Breadcrumb Macro --- #}
@@ -146,4 +152,34 @@
     <i class="btn-icon fa-regular fa-circle"></i> <span class="btn-text">Marcar como Concluído</span>
   </button>
 </article>
+{% endmacro %}
+
+{# --- Tabs Macro --- #}
+{% macro tabs(id, items=[]) %}
+<div class="tabs" id="{{ id }}">
+  <div class="tabs__list" role="tablist" aria-label="{{ id }}">
+    {% for item in items %}
+      <button 
+        type="button"
+        class="tabs__trigger" 
+        role="tab" 
+        aria-selected="{{ 'true' if loop.first else 'false' }}" 
+        aria-controls="{{ id }}-panel-{{ loop.index }}" 
+        id="{{ id }}-tab-{{ loop.index }}"
+        tabindex="{{ '0' if loop.first else '-1' }}"
+      >
+        {% if item.icon %}<i class="{{ item.icon }}" aria-hidden="true"></i>{% endif %}
+        {{ item.label }}
+      </button>
+    {% endfor %}
+  </div>
+  
+  {% for item in items %}
+    <div class="tabs__panel" role="tabpanel" id="{{ id }}-panel-{{ loop.index }}" aria-labelledby="{{ id }}-tab-{{ loop.index }}" {{ '' if loop.first else 'hidden' }}>
+      <div class="tabs__content">
+        {{ item.content | safe }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
 {% endmacro %}

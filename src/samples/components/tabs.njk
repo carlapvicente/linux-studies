@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+title: Exemplo - Tabs (Abas)
+asideType: samples
+---
+{% import "macros/ui.njk" as ui %}
+
+<section class="portal__section">
+    <h1 class="portal__section-title">Tabs (Abas)</h1>
+    <p class="portal__introduction-text">
+      O componente de abas permite organizar conteúdo relacionado em visualizações alternáveis, economizando espaço vertical e reduzindo a carga cognitiva.
+    </p>
+
+    <hr class="portal__divider">
+
+    <!-- 1. SHOWCASE -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-eye"></i> Exemplo Visual</h2>
+    
+    {% set tabContent1 %}
+      <p>Este é o conteúdo da <strong>primeira aba</strong>. É ótimo para textos introdutórios.</p>
+      {{ ui.alert(type='tip', text='Você pode colocar qualquer HTML aqui dentro.') }}
+    {% endset %}
+
+    {% set tabContent2 %}
+      <p>Aqui temos o conteúdo da <strong>segunda aba</strong>.</p>
+      {{ ui.codeBlock(language='bash', code='echo "Hello from Tab 2"') }}
+    {% endset %}
+
+    {% set tabContent3 %}
+      <p>Conteúdo da <strong>terceira aba</strong> com um ícone no título.</p>
+    {% endset %}
+
+    {% set myTabs = [
+      { label: 'Visão Geral', content: tabContent1 },
+      { label: 'Código', content: tabContent2 },
+      { label: 'Configuração', content: tabContent3, icon: 'fa-solid fa-gear' }
+    ] %}
+
+    {{ ui.tabs(id='demo-tabs', items=myTabs) }}
+
+    <hr class="portal__divider">
+
+    <!-- 2. IMPLEMENTATION -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-code"></i> Como Utilizar</h2>
+
+    {{ ui.alert(
+      type='tip',
+      title='Dica de Implementação',
+      text='Use a tag <code>{% set varName %}...{% endset %}</code> do Nunjucks para capturar blocos grandes de HTML e passá-los para a macro.'
+    ) }}
+
+    <h3 class="portal__section-title">Código</h3>
+    {% set code = '{% set contentA %}\n  <p>Conteúdo A</p>\n{% endset %}\n\n{% set contentB %}\n  <p>Conteúdo B</p>\n{% endset %}\n\n{{ ui.tabs(id="my-tabs", items=[\n  { label: "Aba A", content: contentA },\n  { label: "Aba B", content: contentB, icon: "fa-solid fa-code" }\n]) }}' %}
+    {{ ui.codeBlock(code=code, language='jinja2') }}
+
+    <h3 class="portal__section-title">Parâmetros</h3>
+    <ul class="portal__features-list">
+        <li><strong>id</strong> (obrigatório): ID único para o grupo de abas (usado para acessibilidade).</li>
+        <li><strong>items</strong> (obrigatório): Array de objetos contendo:
+            <ul>
+                <li><code>label</code>: Texto da aba.</li>
+                <li><code>content</code>: Conteúdo HTML da aba.</li>
+                <li><code>icon</code>: (Opcional) Classe de ícone Font Awesome.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
