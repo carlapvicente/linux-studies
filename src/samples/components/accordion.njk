@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: Exemplo - Accordion
+asideType: samples
+---
+{% import "macros/ui.njk" as ui %}
+
+<section class="portal__section">
+    <h1 class="portal__section-title">Accordion (Sanfona)</h1>
+    <p class="portal__introduction-text">
+      O componente Accordion é utilizado para alternar a visibilidade de conteúdo, sendo ideal para seções de Perguntas Frequentes (FAQ) ou para organizar informações detalhadas sem ocupar muito espaço vertical.
+    </p>
+
+    <hr class="portal__divider">
+
+    <!-- 1. SHOWCASE -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-eye"></i> Exemplo Visual</h2>
+    
+    {% set content1 %}
+      <p>O Linux é um sistema operacional de código aberto (open source) baseado no kernel Linux. É conhecido por sua estabilidade e segurança.</p>
+    {% endset %}
+
+    {% set content2 %}
+      <p>O kernel é o núcleo do sistema operacional, responsável por gerenciar a comunicação entre o software e o hardware do computador.</p>
+      {{ ui.alert(type='note', text='O kernel Linux foi criado por Linus Torvalds em 1991.') }}
+    {% endset %}
+
+    {% set content3 %}
+      <p>Uma distribuição (ou "distro") é uma versão do sistema operacional Linux que inclui o kernel, ferramentas de sistema, bibliotecas e softwares adicionais.</p>
+    {% endset %}
+
+    {% set faqItems = [
+      { title: 'O que é Linux?', content: content1 },
+      { title: 'O que é o Kernel?', content: content2 },
+      { title: 'O que é uma Distribuição?', content: content3 }
+    ] %}
+
+    {{ ui.accordion(id='faq-demo', items=faqItems) }}
+
+    <hr class="portal__divider">
+
+    <!-- 2. IMPLEMENTATION -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-code"></i> Como Utilizar</h2>
+
+    <h3 class="portal__section-title">Código</h3>
+    {% set code = '{% set contentA %}\n  <p>Resposta da pergunta A...</p>\n{% endset %}\n\n{{ ui.accordion(id="faq-section", items=[\n  { title: "Pergunta A?", content: contentA },\n  { title: "Pergunta B?", content: "<p>Resposta direta aqui.</p>" }\n]) }}' %}
+    {{ ui.codeBlock(code=code, language='jinja2') }}
+
+    <h3 class="portal__section-title">Parâmetros</h3>
+    <ul class="portal__features-list">
+        <li><strong>id</strong> (obrigatório): ID único para o grupo do accordion.</li>
+        <li><strong>items</strong> (obrigatório): Array de objetos contendo:
+            <ul>
+                <li><code>title</code>: O texto do cabeçalho (pergunta/tópico).</li>
+                <li><code>content</code>: O conteúdo HTML a ser exibido ao expandir.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
