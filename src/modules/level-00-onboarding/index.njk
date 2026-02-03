@@ -1,35 +1,23 @@
 ---
 layout: layouts/module.njk
-pageTitle: Linux Studies — Onboarding
+pageTitle: DevOps Arcade — Onboarding
 title: Level 00 - Onboarding
 headerType: doc
 asideType: module
+moduleId: 00-onboarding
 moduleTitle: "Level 00 - Onboarding"
 moduleHasExplanation: true
-moduleHasChecklist: true
 moduleHasExercises: true
 moduleHasChallenges: true
 moduleChecklist:
-  - id: "read-intro"
-    label: "Ler a Introdução"
+  - id: "understand-structure"
+    label: "Entender a Estrutura"
     completed: false
-  - id: "objetivos"
-    label: "Ler os Objetivos"
+  - id: "test-code"
+    label: "Testar Bloco de Código"
     completed: false
-  - id: "sobre-a-trilha"
-    label: "Ler sobre a Trilha"
-    completed: false
-  - id: "como-estudar"
-    label: "Ler as Dicas de Estudo"
-    completed: false
-  - id: "read-checklist"
-    label: "Ler sobre o Checklist"
-    completed: false
-  - id: "exercise-1-complete"
-    label: "Completar Exercício 1"
-    completed: false
-  - id: "challenge-1-complete"
-    label: "Completar Desafio 1"
+  - id: "mark-checklist"
+    label: "Marcar este item"
     completed: false
 asideTopButton:
   title: "Voltar para Início"
@@ -43,101 +31,76 @@ permalink: /modules/00-onboarding/
 
 <section class="module__content">
   <header class="module__header-content">
-    <h1 class="module__main-title"><i class="fa-solid fa-rocket"></i> Bem-vindo ao Onboarding!</h1>
-    <p class="module__subtitle">Este módulo é um ambiente de treinamento. Aqui você vai aprender COMO usar o Linux Studies.</p>
-    <p>O Onboarding vai te ajudar a entender:</p>
-    <ul class="portal__features-list">
-      <li>Como funcionam os exercícios.</li>
-      <li>Como são os desafios.</li>
-      <li>Como usar o checklist para rastrear seu progresso.</li>
-      <li>Quando marcar um módulo como concluído.</li>
-    </ul>
+    <h1 class="module__main-title"><i class="fa-solid fa-rocket"></i> Bem-vindo ao DevOps Arcade!</h1>
+    <p class="module__subtitle">
+      Antes de iniciarmos os estudos técnicos, este módulo rápido vai te ensinar a usar os recursos da nossa plataforma de ensino.
+    </p>
   </header>
 
-  <!-- OBJETIVOS -->
+  <!-- EXPLICAÇÃO -->
   <section id="explicacao" class="module__section">
-    <h2 class="module__section-title"><i class="fa-solid fa-check"></i> Objetivos do Módulo</h2>
-    <p>Ao final deste módulo, você será capaz de:</p>
-    <ul class="portal__features-list">
-      <li>Navegar pela plataforma com confiança.</li>
-      <li>Entender a estrutura dos módulos.</li>
-      <li>Executar exercícios e desafios de forma correta.</li>
-      <li>Utilizar o checklist e o progresso da trilha.</li>
-    </ul>
-  </section>
-
-  <!-- SOBRE A TRILHA -->
-  {# <section id="sobre-a-trilha" class="module__section">
-    <h2 class="module__section-title"><i class="fa-solid fa-layer-group"></i> Sobre a Trilha</h2>
+    <h2 class="module__section-title"><i class="fa-solid fa-book-open"></i> Como funciona a trilha?</h2>
     <p>
-        Ao final desta trilha, você vai dominar:
+      O DevOps Arcade foca em <strong>aprender fazendo</strong>. Todos os módulos seguem uma estrutura padrão para garantir seu aprendizado:
     </p>
-    <ul class="portal__features-list">
-        <li>Comandos essenciais do terminal Linux.</li>
-        <li>Gerenciamento de arquivos e diretórios.</li>
-        <li>Permissões de acesso e segurança básica.</li>
-        <li>Processos e gerenciamento de recursos.</li>
-        <li>Configuração e diagnóstico de redes.</li>
-    </ul>
-  </section> #}
-
-  <!-- COMO ESTUDAR -->
-    <section id="como-estudar" class="module__section">
-        <h2 class="module__section-title"><i class="fa-solid fa-graduation-cap"></i> Dicas para Estudar</h2>
-        <p>
-        Para aproveitar ao máximo esta trilha de estudos, considere as seguintes dicas:
-        </p>
-        <ul class="portal__features-list">
-        <li>Pratique Regularmente: A prática leva à perfeição. Tente aplicar o que você aprende em um ambiente real.</li>
-        <li>Faça Anotações: Anotar pontos importantes pode ajudar na retenção de informações.</li>
-        <li>Revise Conteúdos: Volte aos módulos anteriores para revisar conceitos quando necessário.</li>
-        </ul>
-    </section>
-
-  <!-- CHECKLIST -->
-  <section id="checklist" class="module__section">
-    <h2 class="module__section-title"><i class="fa-solid fa-list-check"></i> Usando o Checklist</h2>
-    <p>
-        O checklist no menu lateral é sua ferramenta para rastrear o que você já completou e o que ainda falta fazer. Marque os itens conforme avança para manter-se organizado e motivado.
-    </p>    
-    <ul class="portal__features-list">
-        <li>Marque Itens Completos: Clique na caixa ao lado de cada item para marcá-lo como concluído.</li>
-        <li>Revise o Progresso: Use o checklist para revisar o que você já aprendeu e o que ainda precisa fazer.</li>
-        <li>Mantenha-se Motivado: Ver seu progresso visualmente pode ser um grande motivador!</li>
-    </ul>
     
-    {% set type = 'tip' %}
-    {% set title = 'Dica' %}
-    {% set text = 'Use o checklist no menu lateral para treinar como rastrear seu progresso dentro deste módulo!' %}
-    {% include "partials/alert.njk" %}
-  </section>
+    <ul class="portal__features-list">
+      <li><strong>1. Explicação:</strong> Conceitos teóricos apresentados de forma direta.</li>
+      <li><strong>2. Exercícios:</strong> Atividades guiadas passo-a-passo ("copie e cole").</li>
+      <li><strong>3. Desafios:</strong> Problemas para resolver sozinho, testando sua compreensão.</li>
+    </ul>
 
+    {{ ui.alert(
+      type='tip',
+      title='Dica de Navegação',
+      text='Use o menu lateral (desktop) ou o botão de menu (mobile) para navegar rapidamente entre as seções dentro de cada módulo.'
+    ) }}
+  </section>
 
   <!-- EXERCÍCIOS -->
   <section id="exercicios" class="module__section">
-    <h2 class="module__section-title"><i class="fa-solid fa-pen"></i> Exercícios</h2>
+    <h2 class="module__section-title"><i class="fa-solid fa-pen"></i> Exercícios Práticos</h2>
+    <p>Vamos testar os componentes que você usará frequentemente.</p>
     
     <div class="module__exercise">
-      <h3 class="module__exercise-title">Exercício 1: Título do Exercício</h3>
-      <p>O que deve ser feito:</p>
+      <h3 class="module__exercise-title">Exercício 1: Blocos de Código</h3>
+      <p>Muitas aulas terão comandos para você executar. Facilitamos sua vida com um botão de cópia.</p>
       <ol>
-        <li>Lista de ações a serem realizadas...</li>
-        <li>Lista de ações a serem realizadas...</li>
+        <li>Passe o mouse sobre o bloco de código abaixo.</li>
+        <li>Clique no botão <strong>"Copiar"</strong> que aparece no canto superior direito.</li>
+        <li>Cole em um bloco de notas ou terminal para testar.</li>
+      </ol>
+
+      {% set code = 'echo "Olá, DevOps Arcade!"' %}
+      {{ ui.codeBlock(code=code, language='bash') }}
+    </div>
+
+    <div class="module__exercise">
+      <h3 class="module__exercise-title">Exercício 2: O Checklist</h3>
+      <p>
+        Na barra lateral, você encontrará um <strong>Checklist</strong>. Ele serve para você rastrear seu progresso dentro do módulo atual.
+      </p>
+      <p><strong>Sua tarefa:</strong></p>
+      <ol>
+        <li>Localize os itens <em>"Entender a Estrutura"</em> e <em>"Testar Bloco de Código"</em> no checklist lateral.</li>
+        <li>Marque a caixa de seleção de cada item.</li>
+        <li>Observe a barra de progresso do módulo aumentar.</li>
       </ol>
     </div>
   </section>
 
   <!-- DESAFIOS -->
   <section id="desafios" class="module__section">
-    <h2 class="module__section-title"><i class="fa-solid fa-trophy"></i> Desafios</h2>
+    <h2 class="module__section-title"><i class="fa-solid fa-trophy"></i> Desafio Final</h2>
 
     <div class="module__exercise">
-      <h3 class="module__exercise-title">Desafio 1: Título do Exercício</h3>
-      <p>O que deve ser feito:</p>
-      <ul class="portal__features-list">
-        <li>Lista de ações a serem realizadas...</li>
-        <li>Lista de ações a serem realizadas...</li>
-      </ul>
+      <h3 class="module__exercise-title">Desafio: Pronto para começar?</h3>
+      <p>
+        Para concluir este onboarding, você precisa marcar o último item do checklist: <em>"Marcar este item"</em>.
+      </p>
+      <p>
+        Feito isso, você estará pronto para o próximo nível! Clique no botão abaixo para acessar o módulo de exemplo (Template).
+      </p>
     </div>
   </section>
 
@@ -145,9 +108,9 @@ permalink: /modules/00-onboarding/
   <footer class="module__footer">
     {{ ui.button(
       href='/modules/01-exemplo/',
-      text='Próximo: Level 01 - Exemplo',
+      text='Próximo: Level 01 - Exemplo de Módulo',
       icon='fa-solid fa-arrow-right',
-      title='Próximo: Level 01 - Exemplo'
+      title='Próximo: Level 01 - Exemplo de Módulo'
     ) }}
   </footer>
 </section>
