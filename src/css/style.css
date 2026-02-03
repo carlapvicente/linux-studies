@@ -1814,4 +1814,42 @@ button:focus-visible {
   animation: accordionFadeIn 250ms ease-out;
 }
 
+/* ---------- Module Completion Button (In-Page) ---------- */
+.module__completion-container {
+  margin-top: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.module__complete-btn-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  cursor: not-allowed;
+  transition: var(--transition-smooth);
+  opacity: 0.6;
+}
+
+.module__complete-btn-large:not(:disabled) {
+  cursor: pointer;
+  opacity: 1;
+  border-color: var(--success);
+  background: color-mix(in srgb, var(--success), transparent 90%);
+  color: var(--success);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--success), transparent 85%);
+}
+
+.module__complete-btn-large:not(:disabled):hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--success), transparent 80%);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--success), transparent 75%);
+}
+
 /* ---------- End File ---------- */
