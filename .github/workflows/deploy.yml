@@ -36,7 +36,7 @@ jobs:
       - name: Build Eleventy site
         run: npm run build
         env:
-          ELEVENTY_BASE_URL: /linux-studies
+          ELEVENTY_BASE_URL: /template-studies
           ELEVENTY_ENV: production
       
       - name: Setup GitHub Pages
