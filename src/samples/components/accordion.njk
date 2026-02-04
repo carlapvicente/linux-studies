@@ -18,22 +18,18 @@ asideType: samples
     <h2 class="portal__section-title"><i class="fa-solid fa-eye"></i> Exemplo Visual</h2>
     
     {% set content1 %}
-      <p>O Linux é um sistema operacional de código aberto (open source) baseado no kernel Linux. É conhecido por sua estabilidade e segurança.</p>
+      <p>Este é o conteúdo da <strong>primeiro accordion</strong>. É ótimo para textos introdutórios.</p>
+      {{ ui.alert(type='tip', text='Você pode colocar qualquer HTML aqui dentro.') }}
     {% endset %}
 
     {% set content2 %}
-      <p>O kernel é o núcleo do sistema operacional, responsável por gerenciar a comunicação entre o software e o hardware do computador.</p>
-      {{ ui.alert(type='note', text='O kernel Linux foi criado por Linus Torvalds em 1991.') }}
-    {% endset %}
-
-    {% set content3 %}
-      <p>Uma distribuição (ou "distro") é uma versão do sistema operacional Linux que inclui o kernel, ferramentas de sistema, bibliotecas e softwares adicionais.</p>
+      <p>Aqui temos o conteúdo da <strong>segundo accordion</strong>.</p>
+      {{ ui.codeBlock(language='bash', code='echo "Hello from Accordion 2"') }}
     {% endset %}
 
     {% set faqItems = [
-      { title: 'O que é Linux?', content: content1 },
-      { title: 'O que é o Kernel?', content: content2 },
-      { title: 'O que é uma Distribuição?', content: content3 }
+      { title: 'Visão Geral', content: content1 },
+      { title: 'Código', content: content2 }
     ] %}
 
     {{ ui.accordion(id='faq-demo', items=faqItems) }}
