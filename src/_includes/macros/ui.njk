@@ -240,3 +240,21 @@
     {{ text }}
   </span>
 {% endmacro %}
+
+{# --- Video Macro --- #}
+{% macro video(videoId, title='Vídeo do YouTube', caption='') %}
+<figure class="video-component">
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/{{ videoId }}" 
+      title="{{ title }}" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  {% if caption %}
+  <figcaption class="video-caption">{{ caption | safe }}</figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}

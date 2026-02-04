@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Exemplo - Vídeo
+headerType: doc
+asideType: samples
+---
+{% import "macros/ui.njk" as ui %}
+
+<section class="portal__section">
+    <h1 class="portal__section-title">Vídeo</h1>
+    <p class="portal__introduction-text">
+      O componente de vídeo permite incorporar aulas e tutoriais do YouTube de forma responsiva, mantendo a proporção 16:9 em qualquer dispositivo.
+    </p>
+
+    <hr class="portal__divider">
+
+    <!-- 1. SHOWCASE -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-eye"></i> Exemplo Visual</h2>
+    
+    <h3 class="portal__section-title">Vídeo Simples</h3>
+    {{ ui.video(videoId='dQw4w9WgXcQ', title='Rick Astley - Never Gonna Give You Up') }}
+
+    <h3 class="portal__section-title" style="margin-top: 32px;">Vídeo com Legenda</h3>
+    {{ ui.video(videoId='fNFzfwLM72c', title='The TRON Legacy', caption='Exemplo de legenda para o vídeo. Você pode usar <strong>HTML</strong> aqui.') }}
+
+    <hr class="portal__divider">
+
+    <!-- 2. IMPLEMENTATION -->
+    <h2 class="portal__section-title"><i class="fa-solid fa-code"></i> Como Utilizar</h2>
+
+    <h3 class="portal__section-title">Código</h3>
+    {% set code = '{{ ui.video(videoId="dQw4w9WgXcQ", title="Título do Vídeo", caption="Legenda opcional.") }}' %}
+    {{ ui.codeBlock(code=code, language='jinja2') }}
+
+    <h3 class="portal__section-title">Parâmetros</h3>
+    <ul class="portal__features-list">
+        <li><strong>videoId</strong> (obrigatório): O ID do vídeo no YouTube (parte após <code>v=</code> na URL).</li>
+        <li><strong>title</strong> (opcional): Título para acessibilidade (atributo title do iframe).</li>
+        <li><strong>caption</strong> (opcional): Texto ou HTML para uma legenda exibida abaixo do vídeo.</li>
+    </ul>
+</section>
