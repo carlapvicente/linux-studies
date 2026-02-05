@@ -70,27 +70,6 @@
       moduleId: "{{ moduleId }}",
       filePathStem: "{{ page.filePathStem }}"
     };
-
-    // Função global necessária para o botão de conclusão interagir com o Tracker
-    window.toggleCompleteModule = function() {
-      const tracker = window.progressTracker;
-      const id = '{{ moduleId }}';
-      if (!id || !tracker) return;
-
-      const isComplete = tracker.isComplete(id);
-
-      if (isComplete) {
-        // Desmarcar
-        const progress = tracker.getProgress();
-        delete progress[id];
-        localStorage.setItem(tracker.storageKey, JSON.stringify(progress));
-        tracker.triggerUpdateEvent();
-      } else {
-        // Marcar
-        tracker.markComplete(id);
-      }
-      // A atualização visual do botão é tratada pelo listener 'progressUpdated' ou pelo script module-logic.js
-    };
   </script>
   <script src="{{ '/js/module-logic.js' | url }}"></script>
 {% endblock %}
