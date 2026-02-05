@@ -6,10 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
       // Encontrar o elemento <code> dentro do wrapper pai
       const wrapper = btn.closest('.code-block-wrapper');
       const codeBlock = wrapper.querySelector('code');
+      
+      if (!codeBlock) return;
+      
       const text = codeBlock.innerText;
 
       try {
-        await navigator.clipboard.writeText(text);
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          throw new Error('Clipboard API indisponível');
+        }
         
         // Feedback visual (ícone de check)
         const originalContent = btn.innerHTML;

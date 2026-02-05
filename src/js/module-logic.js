@@ -76,15 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const completeBtn = document.getElementById('btn-complete-module');
   if (completeBtn) {
     completeBtn.addEventListener('click', () => {
-      // Função global definida no index.njk ou similar, ou lógica replicada aqui se necessário.
-      // Como toggleCompleteModule interage com o tracker global, vamos chamá-la se existir no escopo global
-      // ou reimplementar a chamada ao tracker aqui.
-      // Para manter consistência com o layout anterior que usava onclick global:
-      if (typeof window.toggleCompleteModule === 'function') {
-        window.toggleCompleteModule();
+      const tracker = window.progressTracker;
+      if (!moduleId || !tracker) return;
+
+      const isComplete = tracker.isComplete(moduleId);
+
+      if (isComplete) {
+        // Desmarcar
+        const progress = tracker.getProgress();
+        delete progress[moduleId];
+        localStorage.setItem(tracker.storageKey, JSON.stringify(progress));
+        tracker.triggerUpdateEvent();
       } else {
-        // Fallback se a função global não estiver disponível (ex: fora do layout padrão)
-        console.warn('Função toggleCompleteModule não encontrada.');
+        // Marcar
+        tracker.markComplete(moduleId);
       }
       updateCompleteButtonVisuals();
     });
