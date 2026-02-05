@@ -23,18 +23,21 @@ async function generateGlossary() {
     let match;
 
     while ((match = TOOLTIP_REGEX.exec(content)) !== null) {
-      const term = match[2];
+      let term = match[2];
       const definition = match[4];
 
+      // Normalizar termo (remover espaços extras)
+      if (term) term = term.trim();
+
       // Ignorar termos de exemplo (como "...") ou vazios
-      if (!term || term === '...' || term.trim() === '') {
+      if (!term || term === '...' || term === '') {
         continue;
       }
 
-      // Armazena no Map para evitar duplicatas (mantém a última definição encontrada)
-      // Normaliza a chave para lowercase para evitar duplicatas por caixa alta/baixa
-      if (!termsMap.has(term.toLowerCase())) {
-        termsMap.set(term.toLowerCase(), { term, definition });
+      // Armazena no Map para evitar duplicatas (mantém a primeira definição encontrada)
+      const key = term.toLowerCase();
+      if (!termsMap.has(key)) {
+        termsMap.set(key, { term, definition });
       }
     }
   }
