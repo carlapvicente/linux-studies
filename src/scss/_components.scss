@@ -146,8 +146,8 @@
 }
 
 .badge--default {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 20%);
   color: var(--text);
 }
 
@@ -155,6 +155,7 @@
   background: color-mix(in srgb, var(--cyan), transparent 85%);
   border-color: color-mix(in srgb, var(--cyan), transparent 60%);
   color: var(--cyan);
+
   @include mixins.glow-box(var(--cyan), 8px, 80%);
 }
 
@@ -168,6 +169,7 @@
   background: color-mix(in srgb, var(--magenta), transparent 85%);
   border-color: color-mix(in srgb, var(--magenta), transparent 60%);
   color: var(--magenta);
+
   @include mixins.glow-box(var(--magenta), 8px, 80%);
 }
 
@@ -188,7 +190,11 @@
   gap: 8px;
 }
 
-.breadcrumb__item { display: flex; align-items: center; gap: 8px; }
+.breadcrumb__item { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
 
 .breadcrumb__link {
   color: var(--cyan);
@@ -231,11 +237,37 @@
   max-width: 100%;
 }
 
-.terminal__block--bash::before { content: "$ bash"; display: block; font-size: 12px; color: color-mix(in srgb, var(--cyan), transparent 30%); margin-bottom: 8px; font-weight: 600; }
-.terminal__block--powershell::before { content: "PS>"; display: block; font-size: 12px; color: color-mix(in srgb, var(--accent-gold), transparent 30%); margin-bottom: 8px; font-weight: 600; }
-.terminal__block--markdown::before { content: "# markdown"; display: block; font-size: 12px; color: color-mix(in srgb, var(--magenta), transparent 30%); margin-bottom: 8px; font-weight: 600; }
+.terminal__block--bash::before {
+  content: "$ bash";
+  display: block;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--cyan), transparent 30%);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
 
-.code-block-wrapper { position: relative; margin: 16px 0; }
+.terminal__block--powershell::before {
+  content: "PS>";
+  display: block;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--accent-gold), transparent 30%);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.terminal__block--markdown::before {
+  content: "# markdown";
+  display: block;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--magenta), transparent 30%);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.code-block-wrapper {
+  position: relative;
+  margin: 16px 0;
+}
 
 .code-block__copy-btn {
   position: absolute;
@@ -280,10 +312,22 @@
   pointer-events: none;
   transition: opacity 250ms ease;
 
-  &.is-open { opacity: 1; pointer-events: auto; .modal__container { transform: translateY(0); } }
+  &.is-open { 
+    opacity: 1; 
+    pointer-events: auto;
+    
+    .modal__container { 
+      transform: translateY(0); 
+    } 
+  }
 }
 
-.modal__overlay { position: absolute; inset: 0; background: rgb(0 0 0 / 75%); backdrop-filter: blur(4px); }
+.modal__overlay { 
+  position: absolute; 
+  inset: 0; 
+  background: rgb(0 0 0 / 75%); 
+  backdrop-filter: blur(4px); 
+}
 
 .modal__container {
   position: relative;
@@ -335,8 +379,17 @@
 }
 
 /* ---------- Tabs ---------- */
-.tabs { margin: 24px 0; }
-.tabs__list { display: flex; flex-wrap: wrap; gap: 2px; border-bottom: 1px solid color-mix(in srgb, var(--cyan), transparent 80%); margin-bottom: 0; }
+.tabs {
+  margin: 24px 0;
+}
+
+.tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 1px solid color-mix(in srgb, var(--cyan), transparent 80%);
+  margin-bottom: 0;
+}
 
 .tabs__trigger {
   background: transparent;
@@ -637,7 +690,7 @@
 
 .quiz__explanation {
   padding-top: 10px;
-  border-top: 1px solid currentColor;
+  border-top: 1px solid currentcolor;
   opacity: 0.9;
   line-height: 1.5;
 
@@ -718,6 +771,7 @@
   transform: translateY(20px);
   transition: all 0.3s ease;
   z-index: 999;
+
   @include mixins.glow-box(var(--cyan), 15px, 50%);
 
   &.is-visible {
@@ -728,7 +782,9 @@
 
   &:hover {
     background: var(--cyan);
+
     @include mixins.glow-box(var(--cyan), 25px, 30%);
+
     transform: translateY(-3px);
   }
 }
