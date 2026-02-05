@@ -45,3 +45,8 @@ desktop.ini
 *.zip
 *.tar
 *.gz
+
+# =========================
+# Generated Assets
+# =========================
+src/css/style.css

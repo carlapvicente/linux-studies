@@ -5,8 +5,10 @@
     "@11ty/eleventy": "^3.0.0"
   },
   "scripts": {
+    "build:css": "sass src/scss/main.scss src/css/style.css --no-source-map",
+    "watch:css": "sass --watch src/scss/main.scss src/css/style.css",
     "generate:glossary": "node src/js/generate-glossary.js",
-    "dev": "npm run generate:glossary && eleventy --serve",
-    "build": "npm run generate:glossary && eleventy"
+    "dev": "npm run generate:glossary && npm run build:css && eleventy --serve & npm run watch:css",
+    "build": "npm run generate:glossary && npm run build:css && eleventy"
   }
 }

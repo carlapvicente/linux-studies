@@ -24,6 +24,9 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.ignores.add("src/samples");
   eleventyConfig.ignores.add("src/js/generate-glossary.js");
 
+  // ✨ Monitorar arquivos Sass
+  eleventyConfig.addWatchTarget("src/scss");
+
   // ✨ Coleção automática de módulos
   eleventyConfig.addCollection("modules", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/modules/*/index.njk")

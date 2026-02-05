@@ -1,0 +1,13 @@
+/* ---------- Mixins ---------- */
+
+// Efeito de brilho em caixas (Box Shadow)
+// Uso: @include glow-box(var(--cyan), 20px, 50%);
+@mixin glow-box($color, $size: 18px, $transparency: 25%) {
+  box-shadow: 0 0 $size color-mix(in srgb, $color, transparent $transparency);
+}
+
+// Efeito de brilho em texto (Text Shadow)
+// Uso: @include glow-text(var(--magenta));
+@mixin glow-text($color, $size: 12px, $transparency: 20%) {
+  text-shadow: 0 0 $size color-mix(in srgb, $color, transparent $transparency);
+}
