@@ -9,7 +9,7 @@
   {% if '/docs/' in page.filePathStem %}
     {% set breadcrumbItems = [
       { label: 'Início', href: '/', icon: 'fa-solid fa-house' },
-      { label: 'Documentação', href: '/#docs' },
+      { label: 'Documentação', href: '/#docs', icon: 'fa-solid fa-book' },
       { label: title }
     ] %}
   {% elif '/modules/' in page.filePathStem %}
