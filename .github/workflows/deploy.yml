@@ -36,6 +36,9 @@ jobs:
       - name: Lint CSS
         run: npm run lint:css
       
+      - name: Validate Modules
+        run: npm run validate:modules
+      
       - name: Build Eleventy site
         run: npm run build
         env:
