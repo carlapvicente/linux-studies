@@ -1,0 +1,16 @@
+/* ---------- Footer ---------- */
+.portal__footer {
+  max-width: var(--container);
+  margin: 0 auto 30px;
+  padding: 0 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.portal__footer-text { margin: 12px 0 4px; }
+
+.portal__footer-notice {
+  margin: 0;
+  color: color-mix(in srgb, var(--magenta), transparent 15%);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--magenta), transparent 80%);
+}

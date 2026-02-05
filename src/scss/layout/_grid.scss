@@ -1,0 +1,36 @@
+/* ---------- Layout (Grid) ---------- */
+.portal__layout {
+  max-width: var(--container);
+  margin: 0 auto 22px;
+  padding: 0 clamp(18px, 2.2vw, 28px);
+  display: grid;
+  gap: 16px;
+}
+
+/* Tablet/Laptop: sidebar + content */
+@media (width >= 1024px) {
+  .portal__layout {
+    gap: 20px;
+    grid-template-columns: 300px 1fr;
+  }
+
+  .portal__nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portal__nav-link {
+    width: 100%;
+  }
+}
+
+/* Large Desktop */
+@media (width >= 1400px) {
+  :root {
+    --max: 1600px;
+  }
+
+  .portal__layout {
+    grid-template-columns: 360px 1fr;
+  }
+}

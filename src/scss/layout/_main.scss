@@ -1,0 +1,9 @@
+/* ---------- Main ---------- */
+.portal__main {
+  border: var(--container-border);
+  border-radius: var(--radius);
+  background: var(--container-bg);
+  box-shadow: var(--container-shadow);
+  padding: 20px;
+  min-width: 0;
+}

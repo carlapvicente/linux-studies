@@ -1,0 +1,39 @@
+/* ---------- Global Styles ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    /* glow único e fluido */
+    radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--cyan), transparent 88%), transparent 65%),
+    radial-gradient(circle at 70% 80%, color-mix(in srgb, var(--magenta), transparent 90%), transparent 70%),
+
+    /* grid repetido */
+    linear-gradient(color-mix(in srgb, var(--cyan), transparent 95%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--cyan), transparent 95%) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    40px 40px,
+    40px 40px;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+
+/* ---------- Links & Focus ---------- */
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 3px;
+  border-radius: 10px;
+}

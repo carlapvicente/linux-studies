@@ -1,0 +1,53 @@
+/* ---------- Navigation ---------- */
+.portal__nav {
+  margin-top: 16px;
+}
+
+.portal__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.portal__nav-link {
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  width: auto;
+  flex: none;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 65%);
+  background: color-mix(in srgb, var(--violet), transparent 93%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--violet), transparent 88%);
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent-gold), transparent 35%);
+    background: color-mix(in srgb, var(--magenta), transparent 90%);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--accent-gold), transparent 76%);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent-gold), transparent 25%);
+    outline-offset: 3px;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accent-gold), transparent 72%);
+  }
+
+  &[aria-current="page"] {
+    border-color: color-mix(in srgb, var(--accent-gold), transparent 15%);
+    background: color-mix(in srgb, var(--magenta), transparent 90%);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--accent-gold), transparent 68%);
+    color: var(--accent-gold);
+  }
+}

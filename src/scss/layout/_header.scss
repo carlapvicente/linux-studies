@@ -1,0 +1,23 @@
+/* ---------- Header ---------- */
+.portal__header {
+  max-width: var(--container);
+  margin: 28px auto 18px;
+  padding: 22px clamp(18px, 2.2vw, 28px);
+  border: var(--container-border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 2%));
+  box-shadow: var(--container-shadow);
+}
+
+.portal__title {
+  margin: 0;
+  font-size: clamp(28px, 3.6vw, 44px);
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 14px color-mix(in srgb, var(--cyan), transparent 65%);
+}
+
+.portal__subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
