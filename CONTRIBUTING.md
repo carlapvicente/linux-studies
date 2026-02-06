@@ -2,20 +2,22 @@
 
 Obrigado pelo interesse em contribuir com o **DevOps Arcade Template**! 🎉
 
-Este repositório é a **base estrutural** utilizada para criar diversas trilhas de estudo. Melhorias feitas aqui beneficiam todos os cursos que utilizam este template.
+Este repositório é a **espinha dorsal** do ecossistema **DevOps Arcade**. Ele não é um curso em si, mas a ferramenta que permite que instrutores e criadores de conteúdo construam suas próprias trilhas de aprendizado.
+
+Aqui, nosso foco não são os alunos finais, mas sim **você**: desenvolvedor, designer ou instrutor que deseja melhorar a experiência de quem cria e consome conteúdo educacional.
 
 ---
 
 ## 🎯 Como posso contribuir?
 
-### 1. Criando Novos Cursos (Conteúdo)
-Se o seu objetivo é criar um curso completo (ex: *Kubernetes Studies*), você **não precisa** abrir um Pull Request neste repositório.
+### 1. Expandindo o Ecossistema (Novas Trilhas)
+Se o seu objetivo é criar um novo curso para o DevOps Arcade (ex: *Kubernetes Studies*), você **não precisa** abrir um Pull Request neste repositório.
 
 - Utilize o botão **"Use this template"** na página inicial do repositório para criar o seu próprio projeto.
 - Siga as instruções do `README.md` para personalizar o seu curso.
 
-### 2. Melhorando o Template (Estrutura)
-Se você quer melhorar a base para todos (ex: corrigir um bug no layout, otimizar um script, criar um novo componente), siga as diretrizes abaixo.
+### 2. Evoluindo a Plataforma (Template)
+Se você quer melhorar a ferramenta que empodera outros criadores (ex: corrigir um bug no layout, otimizar um script, criar um novo componente), siga as diretrizes abaixo.
 
 #### 🐛 Correções de Bugs
 - Verifique se o bug já foi reportado nas **Issues**.

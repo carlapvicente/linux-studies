@@ -2,7 +2,7 @@
 name: Sugerir Funcionalidade 💡
 about: Sugira uma ideia para este projeto.
 title: "[FEAT] "
-labels: enhancement
+labels: melhoria
 assignees: ''
 ---
 
