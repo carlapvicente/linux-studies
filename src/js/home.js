@@ -1,9 +1,28 @@
+// --- Funções de Celebração ---
+
+function triggerCompletionCelebration() {
+  const completionModal = document.getElementById('completion-modal');
+  if (completionModal) {
+    // 1. Abrir modal (efeito de blur aparece)
+    completionModal.classList.add('is-open');
+    completionModal.setAttribute('aria-hidden', 'false');
+    
+    // 2. Rolar para o topo suavemente (enquanto o blur está ativo)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // 3. Disparar confetes e travar o scroll após a animação de subida
+    setTimeout(() => {
+      launchConfetti();
+      document.body.style.overflow = 'hidden';
+    }, 800);
+  }
+}
+
 // Função para toggle de conclusão do módulo
 function toggleModuleComplete(moduleId) {
   const tracker = window.progressTracker;
   const isCurrentlyComplete = tracker.isComplete(moduleId);
   
-  // Verificar estado antes da mudança
   const was100 = tracker.getOverallProgress() === 100;
   
   if (isCurrentlyComplete) {
@@ -17,26 +36,10 @@ function toggleModuleComplete(moduleId) {
     tracker.markComplete(moduleId);
   }
   
-  // Verificar estado após a mudança
   const is100 = tracker.getOverallProgress() === 100;
   
-  // Se completou 100% agora, soltar confetes!
   if (!was100 && is100) {
-    // 1. Abrir modal (efeito de blur aparece)
-    const completionModal = document.getElementById('completion-modal');
-    if (completionModal) {
-      completionModal.classList.add('is-open');
-      completionModal.setAttribute('aria-hidden', 'false');
-      
-      // 2. Rolar para o topo suavemente (enquanto o blur está ativo)
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      
-      // 3. Disparar confetes e travar o scroll após a animação de subida
-      setTimeout(() => {
-        launchConfetti();
-        document.body.style.overflow = 'hidden';
-      }, 800);
-    }
+    triggerCompletionCelebration();
   }
   
   updateProgressDisplay();
@@ -103,10 +106,23 @@ function launchConfetti() {
 }
 
 // Expor funções globalmente para os atributos onclick do HTML
-window.toggleModuleComplete = toggleModuleComplete;
+window.toggleModuleComplete = toggleModuleComplete; // Para os cards da home
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', updateProgressDisplay);
+document.addEventListener('DOMContentLoaded', () => {
+  updateProgressDisplay();
+
+  // Verifica se a URL contém o parâmetro para celebrar a conclusão
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('celebrate') === 'true') {
+    triggerCompletionCelebration();
+    
+    // Limpa a URL para evitar que a celebração ocorra novamente ao recarregar a página
+    const newUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState({}, document.title, newUrl);
+  }
+});
+
 window.addEventListener('progressUpdated', updateProgressDisplay);
 
 // Lógica do Modal de Reset (separada para não poluir o escopo global desnecessariamente)

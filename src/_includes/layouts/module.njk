@@ -71,7 +71,8 @@
     // Configuração para o script externo
     window.moduleData = {
       moduleId: "{{ moduleId }}",
-      filePathStem: "{{ page.filePathStem }}"
+      filePathStem: "{{ page.filePathStem }}",
+      baseUrl: "{{ '/' | url }}"
     };
   </script>
   <script src="{{ '/js/module-logic.js' | url }}"></script>

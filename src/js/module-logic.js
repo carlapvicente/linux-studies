@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Verifica se as configurações do módulo estão presentes
   if (!window.moduleData) return;
 
-  const { moduleId, filePathStem } = window.moduleData;
+  const { moduleId, filePathStem, baseUrl } = window.moduleData;
 
   // Atualizar barra de progresso do módulo
   function updateModuleProgress() {
@@ -90,6 +90,15 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         // Marcar
         tracker.markComplete(moduleId);
+
+        // Se o curso foi concluído AGORA, redireciona para a home para a celebração
+        if (tracker.getOverallProgress() === 100) {
+          // Adiciona um parâmetro para a home saber que deve celebrar
+          const celebrationUrl = new URL(baseUrl, window.location.origin);
+          celebrationUrl.searchParams.set('celebrate', 'true');
+          window.location.href = celebrationUrl.href;
+          return; // Impede a execução do resto do script para permitir o redirecionamento
+        }
       }
       updateCompleteButtonVisuals();
     });
