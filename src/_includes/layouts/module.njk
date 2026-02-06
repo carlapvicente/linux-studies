@@ -39,6 +39,9 @@
             {% if moduleHasExercises %}
             <li><a href="#exercicios" class="module-nav__link"><i class="fa-solid fa-pen" aria-hidden="true"></i> Exercícios</a></li>
             {% endif %}
+            {% if moduleHasQuiz %}
+            <li><a href="#quiz" class="module-nav__link"><i class="fa-solid fa-question-circle" aria-hidden="true"></i> Quiz</a></li>
+            {% endif %}
             {% if moduleHasChallenges %}
             <li><a href="#desafios" class="module-nav__link"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Desafios</a></li>
             {% endif %}

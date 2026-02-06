@@ -8,6 +8,7 @@ moduleId: sample-template
 moduleTitle: "Level XX - Nome Curto"
 moduleHasExplanation: true
 moduleHasExercises: true
+moduleHasQuiz: true
 moduleHasChallenges: true
 moduleChecklist:
   - id: "task-1"
@@ -36,11 +37,11 @@ permalink: /samples/templates/module/
   <section class="module__section">
     <h2 class="module__section-title"><i class="fa-solid fa-map"></i> Visão Geral</h2>
     
-    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; font-size: 14px;">
-      <span style="display: flex; align-items: center; gap: 8px; color: var(--accent-gold);">
+    <div class="module__meta-info">
+      <span class="meta-item meta-item--time">
         <i class="fa-solid fa-clock"></i> <strong>Tempo estimado:</strong> <span id="reading-time">Calculando...</span>
       </span>
-      <span style="display: flex; align-items: center; gap: 8px; color: var(--cyan);">
+      <span class="meta-item meta-item--commands">
         <i class="fa-solid fa-terminal"></i> <strong>Comandos:</strong> <code>comando 1</code>, <code>comando 2</code>, <code>comando 3</code>
       </span>
     </div>
@@ -87,6 +88,22 @@ permalink: /samples/templates/module/
         code='comando_exemplo --flag'
       ) }}
     </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-question-circle"></i> Teste seu Conhecimento</h2>
+    
+    {% set quizOptions = [
+      { text: 'Opção A (Correta)', isCorrect: true, explanation: 'Explicação do porquê esta é a correta.' },
+      { text: 'Opção B (Incorreta)', isCorrect: false, explanation: 'Explicação do erro.' }
+    ] %}
+
+    {{ ui.quiz(
+      id='quiz-template',
+      question='Pergunta de validação sobre o conteúdo apresentado?',
+      options=quizOptions
+    ) }}
   </section>
 
   <!-- DESAFIOS -->

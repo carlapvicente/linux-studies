@@ -8,6 +8,7 @@ moduleId: 01-exemplo
 moduleTitle: "Level 01 - Título Curto"
 moduleHasExplanation: true
 moduleHasExercises: true
+moduleHasQuiz: true
 moduleHasChallenges: true
 moduleChecklist:
   - id: "read-concept"
@@ -84,6 +85,22 @@ permalink: /modules/01-exemplo/
       {% set code = 'echo "Exemplo de comando"' %}
       {{ ui.codeBlock(code=code, language='bash') }}
     </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="module__section">
+    <h2 class="module__section-title"><i class="fa-solid fa-question-circle"></i> Teste seu Conhecimento</h2>
+    
+    {% set quizOptions = [
+      { text: 'Opção A (Correta)', isCorrect: true, explanation: 'Explicação do porquê esta é a correta.' },
+      { text: 'Opção B (Incorreta)', isCorrect: false, explanation: 'Explicação do erro.' }
+    ] %}
+
+    {{ ui.quiz(
+      id='quiz-template',
+      question='Pergunta de validação sobre o conteúdo apresentado?',
+      options=quizOptions
+    ) }}
   </section>
 
   <!-- DESAFIOS -->
