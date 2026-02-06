@@ -1,0 +1,73 @@
+/* Styles specific to the /samples documentation pages */
+
+.sample-showcase {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.sample-card-wrapper {
+  max-width: 350px;
+}
+
+.sample-card-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.sample-card-title {
+  margin-top: 10px;
+}
+
+.sample-button-margin {
+  margin: 20px 0;
+}
+
+.sample-section-spacing {
+  margin-top: 32px;
+}
+
+.sample-certificate-btn {
+  border-color: var(--accent-gold);
+  color: #000;
+  background: var(--accent-gold);
+}
+
+.sample-modal-completion-btn {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.sample-modal-completion-content {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.sample-modal-completion-icon {
+  font-size: 80px;
+  color: var(--accent-gold);
+  margin-bottom: 30px;
+  display: inline-block;
+  text-shadow: 0 0 30px rgb(255 215 0 / 60%);
+}
+
+.sample-modal-completion-message {
+  font-size: 18px;
+}
+
+.sample-modal-completion-actions {
+  justify-content: center;
+  margin-top: 24px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sample-modal-close-btn {
+  border-color: rgb(255 255 255 / 20%);
+  color: var(--muted);
+  background: transparent;
+}
