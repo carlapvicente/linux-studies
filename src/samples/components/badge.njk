@@ -17,7 +17,7 @@ asideType: samples
     <!-- 1. SHOWCASE -->
     <h2 class="portal__section-title"><i class="fa-solid fa-eye"></i> Exemplos Visuais</h2>
     
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+    <div class="sample-showcase">
       {{ ui.badge(text='Padrão', variant='default') }}
       {{ ui.badge(text='Novo', variant='new', icon='fa-solid fa-star') }}
       {{ ui.badge(text='Atualizado', variant='updated', icon='fa-solid fa-rotate') }}
@@ -25,14 +25,14 @@ asideType: samples
     </div>
 
     <h3 class="portal__section-title">Uso em Cards</h3>
-    <div style="max-width: 350px;">
+    <div class="sample-card-wrapper">
       <article class="module__card">
         <div class="module__header">
-          <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+          <div class="sample-card-header">
             <p class="module__level">Level 99</p>
             {{ ui.badge(text='Novo', variant='new') }}
           </div>
-          <h3 class="module__title" style="margin-top: 10px;">Módulo Exemplo</h3>
+          <h3 class="module__title sample-card-title">Módulo Exemplo</h3>
         </div>
         <p class="module__description">
           Este é um exemplo de como um badge pode ser posicionado dentro de um card.
