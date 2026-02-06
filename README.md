@@ -1,5 +1,10 @@
 # DevOps Arcade — Template Studies
 
+![Eleventy](https://img.shields.io/badge/Eleventy-SSG-222222?style=for-the-badge&logo=eleventy&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-Styling-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+
 Este repositório serve como **Template Base** para a criação de trilhas educacionais no ecossistema **DevOps Arcade**. Ele fornece toda a estrutura de UI, navegação, rastreamento de progresso e geração de certificados, permitindo que você foque apenas na criação do conteúdo.
 
 ## 🚀 Primeiros Passos
@@ -18,152 +23,107 @@ Este repositório serve como **Template Base** para a criação de trilhas educa
 
 ---
 
-## ⚙️ Guia de Personalização
+## 🎨 Design System (Samples)
 
-Para transformar este template no seu curso (ex: *Docker Studies*), siga o checklist abaixo alterando os arquivos indicados.
+O template inclui uma documentação visual completa dos componentes disponíveis (Alertas, Botões, Code Blocks, etc.). Use essa página como referência para copiar e colar os códigos dos componentes enquanto cria suas aulas.
 
-### 1. Configurações do Repositório
+👉 **Acesse a página de Samples:** `http://localhost:8080/samples/`
 
-Defina o nome técnico do projeto e a URL de publicação.
+> **Nota:** No template publicado [Demo](https://carlapvicente.github.io/template-studies), o botão "Samples" permanece visível na barra lateral para que novos criadores de conteúdo possam conhecer o Design System facilmente. Ao criar sua própria trilha, você provavelmente vai querer ocultá-lo.
 
-**Arquivo:** `package.json`
-> Altere o nome do pacote para o nome do seu projeto.
+---
 
-```json
-{
-  "name": "docker-studies",  <-- Altere aqui
-  "private": true,
-  ...
-}
-```
+## ⚙️ Checklist de Personalização
 
-**Arquivo:** `.github/workflows/deploy.yml`
-> **Importante:** A variável `ELEVENTY_BASE_URL` deve ser igual ao nome do seu repositório no GitHub (com a barra na frente). Isso garante que o CSS e JS carreguem corretamente no GitHub Pages.
+Para transformar este template no seu curso (ex: *Docker Studies*), você deve editar os seguintes arquivos para remover as referências a "Template Studies":
 
-```yaml
-      - name: Build Eleventy site
-        run: npm run build
-        env:
-          ELEVENTY_BASE_URL: /docker-studies  <-- Altere aqui
-          ELEVENTY_ENV: production
-```
+### 1. Configurações do Projeto
 
-### 2. Identidade Visual e Textos
+- [ ] **`package.json`**: Altere o `"name"` para o nome técnico do seu projeto (ex: `docker-studies`).
+- [ ] **`.github/workflows/deploy.yml`**:
+    - Altere `ELEVENTY_BASE_URL` para `/<nome-do-repositorio>`. Isso garante que o site funcione no GitHub Pages.
+- [ ] **`src/_data/site.json`**:
+    - Atualize `"url"`, `"name"` e `"description"` com os dados reais do seu curso.
 
-Personalize os títulos que aparecem na aba do navegador e na página inicial.
+### 2. Textos e Identidade Visual
 
-**Arquivo:** `src/_includes/partials/head.njk`
-> Define o título da aba do navegador e a descrição para SEO.
+- [ ] **`src/index.njk`**:
+    - Atualize o `pageTitle` no topo do arquivo.
+    - Altere o título `<h1>` e o subtítulo de boas-vindas.
+- [ ] **`src/_includes/partials/header-home.njk`**:
+    - Altere o título e ícone que aparecem no cabeçalho da página inicial.
+- [ ] **`src/_includes/partials/head.njk`**:
+    - Ajuste o `<title>` padrão e a descrição para SEO.
 
-```html
-<meta name="description" content="Aprenda Docker do zero ao avançado...">
-<title>{{ pageTitle or title or 'Docker Studies' }}</title>
-```
+### 3. Funcionalidades
 
-**Arquivo:** `src/_includes/partials/header-home.njk`
-> Define o título principal (H1) e o subtítulo exibidos no topo da página inicial.
+- [ ] **`src/js/progress-tracker.js`**:
+    - **Essencial:** Altere `this.storageKey` para um valor único (ex: `'docker-studies-progress'`). Isso evita conflito de dados com outros cursos.
+- [ ] **`src/js/certificate.js`**:
+    - Personalize o objeto `certificateConfig` com o nome do curso e rodapé desejados para o certificado PDF.
 
-```html
-<header class="portal__header">
-  <h1 class="portal__title"><i class="fa-brands fa-docker"></i> Docker Studies</h1>
-  <p class="portal__subtitle">Trilha prática de containers e orquestração.</p>
-</header>
-```
+### 4. Ocultar Botão "Samples" (Opcional)
 
-### 3. Funcionalidades do Curso
+Para remover o botão de acesso ao Design System da barra lateral na sua versão final:
 
-Configure o certificado e o sistema de progresso.
-
-**Arquivo:** `src/js/certificate.js`
-> Personalize as informações que aparecerão no PDF do certificado.
-
-```javascript
-const certificateConfig = {
-  title: "CERTIFICADO DE CONCLUSÃO",
-  courseName: "Docker Studies - Fundamentos", // <-- Nome do curso
-  footer: "DevOps Arcade | Docker Track",
-  // ...
-};
-```
-
-**Arquivo:** `src/js/progress-tracker.js`
-> **Essencial:** Altere a `storageKey` para um nome único. Se você mantiver o padrão, o progresso de um curso pode sobrescrever o de outro se o aluno fizer ambos.
-
-```javascript
-class ProgressTracker {
-  constructor() {
-    // Use um nome único para seu curso
-    this.storageKey = 'docker-studies-progress'; 
-    
-    // Liste os IDs dos seus módulos aqui (deve bater com o 'moduleId' no arquivo .njk)
-    this.modules = [
-      '00-onboarding',
-      '01-intro-docker',
-      '02-containers'
-    ];
-  }
-  // ...
-}
-```
+- [ ] **`src/_includes/partials/aside-home.njk`**:
+    - Remova ou comente o bloco `if` que contém o botão "Samples".
 
 ---
 
 ## 📝 Criando Conteúdo (Novos Módulos)
 
-A estrutura de aulas fica na pasta `src/modules/`. Para criar uma nova aula:
+A estrutura de aulas fica na pasta `src/modules/`.
 
 1. **Duplique** a pasta `src/modules/level-01-exemplo`.
 2. **Renomeie** a pasta para o novo tópico (ex: `level-02-containers`).
 3. **Edite** o arquivo `index.njk` dentro da nova pasta:
-   - Atualize o cabeçalho (Front Matter) com o título e ID do módulo.
+   - Atualize o **Front Matter** (título, `moduleId`, checklist).
    - Escreva o conteúdo.
-4. **Registre** o novo módulo:
-   - Adicione o ID no `src/js/progress-tracker.js`.
-   - Adicione o Card na página inicial (`src/index.njk`).
+4. **Adicione o Card na Home:**
+   - Abra `src/index.njk` e adicione um novo `{{ ui.moduleCard(...) }}` na lista de módulos.
 
 ---
 
 ## 📂 Estrutura de Pastas
 
-Entenda onde cada coisa fica:
+Entenda como o projeto está organizado:
 
 ```
-src/
-├── modules/              # Onde ficam as aulas
-│   ├── level-00-onboarding/  # Módulo padrão de introdução
-│   └── level-01-exemplo/     # Template para copiar e criar novos
-├── _includes/            # Componentes e Layouts
-├── css/                  # Estilos (Tema TRON)
-├── js/                   # Lógica (Progresso, Certificado, UI)
-├── samples/              # Design System (Exemplos de componentes)
-└── index.njk             # Página Inicial (Lista de módulos)
+├── .github
+│   └── workflows        # Automação de deploy para o GitHub Pages (CI/CD)
+├── src                  # Código-fonte do site
+│   ├── _data            # Dados globais acessíveis em todo o site (ex: `glossary.json`, `site.json`)
+│   ├── _includes        # Arquivos reutilizáveis
+│   │   ├── layouts      # Estruturas base das páginas (ex: `base.njk`, `module.njk`)
+│   │   ├── macros       # Componentes de UI (botões, alertas) para uso nos templates
+│   │   └── partials     # Fragmentos de layout (cabeçalho, rodapé, barra lateral)
+│   ├── docs             # Páginas de apoio ao aluno (Pré-requisitos, Glossário)
+│   ├── js               # Scripts JavaScript (lógica de progresso, validações, interatividade)
+│   ├── modules          # Área principal de conteúdo: Cada pasta aqui é uma aula/módulo do curso
+│   ├── samples          # Documentação do Design System e templates de exemplo para criadores
+│   ├── scss             # Estilos do projeto (Sass) modularizados em componentes e páginas
+│   ├── index.njk        # Página inicial (Home) que lista os módulos
+│   ├── robots.txt.njk   # Arquivo para SEO gerados automaticamente
+│   └── sitemap.njk      # Arquivo para SEO gerados automaticamente
+├── .eleventy.js         # Configuração do gerador de site estático (Eleventy)
+├── .stylelintrc.json    # Regras para manter a qualidade e padrão do código CSS/Sass
+└── package.json         # Dependências do projeto e scripts de execução (`dev`, `build`, `lint`)
+
 ```
 
-## 📝 Criando Conteúdo
+---
 
-Para criar um novo módulo:
+## 🤝 Contribuindo
 
-1. Duplique a pasta `src/modules/level-01-exemplo`.
-2. Renomeie a pasta (ex: `level-02-containers`).
-3. Edite o arquivo `index.njk` dentro da nova pasta:
-   - Atualize o **Front Matter** (título, permalink, checklist).
-   - Escreva o conteúdo usando HTML e as Macros Nunjucks disponíveis.
-4. Adicione o ID do novo módulo em `src/js/progress-tracker.js`.
-5. Adicione o Card do novo módulo em `src/index.njk`.
+O **DevOps Arcade** é uma iniciativa para compartilhar conhecimento gratuitamente.
 
-## 🎨 Design System (Samples)
+Este repositório é a **base estrutural** (Template) utilizada por todas as trilhas de estudo.
 
-O template inclui uma seção de **Samples** acessível via botão na sidebar. Ela contém a documentação visual de todos os componentes disponíveis (Alertas, Botões, Code Blocks, etc.).
+- **Melhorias no Template:** Se você encontrou um bug no layout, melhorou um script ou criou um novo componente de UI, abra um Pull Request neste repositório. Sua contribuição ajudará todos os cursos que utilizam esta base.
+- **Novos Cursos:** Se você quer criar um curso novo (ex: Kubernetes, AWS), não precisa contribuir aqui. Basta usar este template (clique no botão "**Use this template**") para criar seu próprio repositório.
 
-Em produção, esta seção permanece ativa para servir de referência rápida durante a criação de conteúdo.
-
-## 🤝 Contribuindo com o DevOps Arcade
-
-O DevOps Arcade é uma iniciativa para compartilhar conhecimento gratuitamente.
-
-- Cada trilha possui seu próprio repositório e GitHub Pages.
-- O **Template Studies** é a base de tudo. Melhorias estruturais devem ser feitas aqui.
-- Se você melhorou o template, considere abrir um PR para atualizar a base para todos!
+Juntos construímos uma comunidade de aprendizado prático e acessível. 🚀
 
 ---
 
