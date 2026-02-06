@@ -127,4 +127,14 @@ Juntos construímos uma comunidade de aprendizado prático e acessível. 🚀
 
 ---
 
+## 📞 Contato
+
+Tem alguma dúvida, sugestão ou encontrou um problema?
+
+- **Dúvidas e Sugestões:** Use a aba [Discussions](https://github.com/carlapvicente/template-studies/discussions) do repositório.
+- **Bugs e Problemas Técnicos:** Abra uma [Issue](https://github.com/carlapvicente/template-studies/issues).
+- **E-mail:** Para outros assuntos, entre em contato via `contato.devopsarcade@gmail.com`.
+
+---
+
 *DevOps Arcade — Learn by doing.*
