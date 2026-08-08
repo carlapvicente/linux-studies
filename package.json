@@ -9,7 +9,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "autoprefixer": "^10.5.4",
-    "postcss": "^8.5.15",
+    "postcss": "^8.5.25",
     "postcss-cli": "^11.0.0",
     "sass": "^1.102.0",
     "stylelint": "^17.14.1",
